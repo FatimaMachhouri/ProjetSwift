@@ -46,9 +46,8 @@
                                                         <constraint firstAttribute="width" secondItem="dZO-JD-XFe" secondAttribute="height" multiplier="63:53" id="awK-Tp-zal"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4A-IV-wgJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4A-IV-wgJ">
                                                     <rect key="frame" x="166.5" y="16.5" width="42" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,6 +55,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dZO-JD-XFe" firstAttribute="top" secondItem="ZYX-Zl-HeE" secondAttribute="top" id="8fc-Q7-AMB"/>
+                                                <constraint firstItem="C4A-IV-wgJ" firstAttribute="centerY" secondItem="ZYX-Zl-HeE" secondAttribute="centerY" id="8pZ-r3-jUT"/>
+                                                <constraint firstItem="C4A-IV-wgJ" firstAttribute="centerX" secondItem="ZYX-Zl-HeE" secondAttribute="centerX" id="QT8-xr-9lN"/>
                                                 <constraint firstItem="dZO-JD-XFe" firstAttribute="leading" secondItem="ZYX-Zl-HeE" secondAttribute="leading" id="gpq-7t-Bqh"/>
                                                 <constraint firstAttribute="bottom" secondItem="dZO-JD-XFe" secondAttribute="bottom" id="rIe-Yv-o4w"/>
                                             </constraints>
