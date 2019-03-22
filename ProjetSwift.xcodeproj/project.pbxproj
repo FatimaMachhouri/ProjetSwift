@@ -15,6 +15,7 @@
 		16C468372244DB4800494E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C468352244DB4800494E57 /* LaunchScreen.storyboard */; };
 		16C468422244DB4800494E57 /* ProjetSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C468412244DB4800494E57 /* ProjetSwiftTests.swift */; };
 		16C4684D2244DB4800494E57 /* ProjetSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4684C2244DB4800494E57 /* ProjetSwiftUITests.swift */; };
+		16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4685B2244FE8500494E57 /* AddTravelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		16C468482244DB4800494E57 /* ProjetSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C4684C2244DB4800494E57 /* ProjetSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetSwiftUITests.swift; sourceTree = "<group>"; };
 		16C4684E2244DB4800494E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C4685B2244FE8500494E57 /* AddTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		16C468282244DB4600494E57 /* ProjetSwift */ = {
 			isa = PBXGroup;
 			children = (
+				16C4685A2244FE6700494E57 /* Controller */,
 				16C468292244DB4600494E57 /* AppDelegate.swift */,
 				16C4682B2244DB4600494E57 /* ViewController.swift */,
 				16C4682D2244DB4600494E57 /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				16C4684E2244DB4800494E57 /* Info.plist */,
 			);
 			path = ProjetSwiftUITests;
+			sourceTree = "<group>";
+		};
+		16C4685A2244FE6700494E57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16C4685B2244FE8500494E57 /* AddTravelViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
+				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
