@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8qu-JV-UvV">
-                                <rect key="frame" x="0.0" y="85" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="54" id="R4r-RP-ImT">
@@ -63,25 +63,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80u-TD-tKr">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                                <state key="normal" title="Ajouter un voyage"/>
-                                <connections>
-                                    <segue destination="AFj-A9-IPM" kind="presentation" id="J2C-KL-hei"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDy-LT-a6e">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kqk-xv-MzO"/>
+                                    <barButtonItem title="Ajouter un voyage" id="IfN-oE-i5e">
+                                        <connections>
+                                            <segue destination="AFj-A9-IPM" kind="showDetail" id="3CA-r5-I0O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="P3G-t5-A8U"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bDy-LT-a6e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8ub-6Q-CP6"/>
                             <constraint firstItem="8qu-JV-UvV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C7C-iy-MEw"/>
                             <constraint firstItem="8qu-JV-UvV" firstAttribute="top" secondItem="jZ2-np-dkO" secondAttribute="bottom" id="EHK-Nx-ksK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="80u-TD-tKr" secondAttribute="trailing" id="GpU-PL-cjA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="80u-TD-tKr" secondAttribute="bottom" id="Ina-S3-Cs6"/>
-                            <constraint firstItem="80u-TD-tKr" firstAttribute="top" secondItem="8qu-JV-UvV" secondAttribute="bottom" id="KP8-W3-Y3x"/>
                             <constraint firstItem="jZ2-np-dkO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MzS-mD-Fbd"/>
                             <constraint firstItem="jZ2-np-dkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OqI-FZ-3wN"/>
-                            <constraint firstItem="80u-TD-tKr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WE1-ll-gT8"/>
+                            <constraint firstItem="bDy-LT-a6e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pgq-OV-5MX"/>
+                            <constraint firstItem="bDy-LT-a6e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sko-oO-M2E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qu-JV-UvV" secondAttribute="trailing" id="dcK-X2-O3C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8qu-JV-UvV" secondAttribute="bottom" id="erb-9q-JD5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -105,15 +110,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-bh-1Px">
-                                <rect key="frame" x="187.5" y="637" width="187.5" height="30"/>
-                                <state key="normal" title="Détails du voyage"/>
-                                <connections>
-                                    <segue destination="3WM-s8-0wi" kind="show" id="3HL-Ui-zUB"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-fO-i4A">
-                                <rect key="frame" x="30" y="115" width="315" height="492"/>
+                                <rect key="frame" x="30" y="115" width="315" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="balanceCell" id="0YM-9Q-YA4">
@@ -155,28 +153,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIG-h4-M9Q">
-                                <rect key="frame" x="0.0" y="637" width="187.5" height="30"/>
-                                <state key="normal" title="+ Ajouter une personne"/>
-                                <connections>
-                                    <segue destination="fej-a4-Ah0" kind="presentation" id="CnQ-Qn-25k"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcO-3Y-O7a">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Fg2-ke-vUJ"/>
+                                    <barButtonItem title="Ajouter une personne" id="L2v-bh-zHF">
+                                        <connections>
+                                            <segue destination="fej-a4-Ah0" kind="presentation" id="5LE-Fn-zGU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ilI-gO-GlH"/>
+                                    <barButtonItem title="Détails du voyage" id="uBf-eG-L8d">
+                                        <connections>
+                                            <segue destination="3WM-s8-0wi" kind="show" id="b3i-Eu-NJN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SUQ-Zv-7MS"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rcO-3Y-O7a" firstAttribute="top" secondItem="UK3-fO-i4A" secondAttribute="bottom" constant="20" id="5kt-Wf-bLw"/>
                             <constraint firstItem="0ID-y6-2UN" firstAttribute="trailing" secondItem="UK3-fO-i4A" secondAttribute="trailing" constant="30" id="66T-7k-7kc"/>
-                            <constraint firstItem="vtf-bh-1Px" firstAttribute="bottom" secondItem="0ID-y6-2UN" secondAttribute="bottom" id="HyL-Eb-936"/>
                             <constraint firstItem="UK3-fO-i4A" firstAttribute="top" secondItem="NDe-vn-xqj" secondAttribute="bottom" constant="30" id="L0Q-NT-Ln7"/>
-                            <constraint firstItem="vtf-bh-1Px" firstAttribute="leading" secondItem="tIG-h4-M9Q" secondAttribute="trailing" id="LvQ-8D-OQg"/>
+                            <constraint firstItem="rcO-3Y-O7a" firstAttribute="bottom" secondItem="0ID-y6-2UN" secondAttribute="bottom" id="Oja-6Z-2aL"/>
                             <constraint firstItem="NDe-vn-xqj" firstAttribute="leading" secondItem="0ID-y6-2UN" secondAttribute="leading" id="Q80-Hu-upN"/>
-                            <constraint firstItem="0ID-y6-2UN" firstAttribute="trailing" secondItem="vtf-bh-1Px" secondAttribute="trailing" id="ZKw-5T-ZZY"/>
-                            <constraint firstItem="vtf-bh-1Px" firstAttribute="leading" secondItem="tIG-h4-M9Q" secondAttribute="trailing" id="bjW-bV-tXf"/>
-                            <constraint firstItem="vtf-bh-1Px" firstAttribute="width" secondItem="tIG-h4-M9Q" secondAttribute="width" id="m0x-Ey-jgO"/>
-                            <constraint firstItem="tIG-h4-M9Q" firstAttribute="leading" secondItem="0ID-y6-2UN" secondAttribute="leading" id="qte-pL-ClJ"/>
+                            <constraint firstItem="rcO-3Y-O7a" firstAttribute="trailing" secondItem="0ID-y6-2UN" secondAttribute="trailing" id="Vzx-49-Sde"/>
+                            <constraint firstItem="rcO-3Y-O7a" firstAttribute="leading" secondItem="0ID-y6-2UN" secondAttribute="leading" id="rYj-42-XkN"/>
                             <constraint firstItem="UK3-fO-i4A" firstAttribute="leading" secondItem="0ID-y6-2UN" secondAttribute="leading" constant="30" id="rtw-qD-1yU"/>
-                            <constraint firstItem="tIG-h4-M9Q" firstAttribute="top" secondItem="UK3-fO-i4A" secondAttribute="bottom" constant="30" id="tpr-yI-OBk"/>
-                            <constraint firstItem="tIG-h4-M9Q" firstAttribute="bottom" secondItem="0ID-y6-2UN" secondAttribute="bottom" id="vuy-Vu-vys"/>
                             <constraint firstItem="0ID-y6-2UN" firstAttribute="trailing" secondItem="NDe-vn-xqj" secondAttribute="trailing" id="wfn-Bg-sGE"/>
                             <constraint firstItem="NDe-vn-xqj" firstAttribute="top" secondItem="0ID-y6-2UN" secondAttribute="top" id="z4r-oH-ut1"/>
                         </constraints>
@@ -271,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbn-n7-Ept" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560.8000000000002" y="1001.649175412294"/>
+            <point key="canvasLocation" x="3137" y="1002"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0yl-BE-BUQ">
@@ -349,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36Y-yA-ILZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3368.8000000000002" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2034" y="1002"/>
         </scene>
         <!--Add Travel View Controller-->
         <scene sceneID="aKj-DR-n63">
@@ -383,15 +388,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edp-w7-Wzc">
-                                <rect key="frame" x="0.0" y="637" width="187.5" height="30"/>
-                                <state key="normal" title="Précédent "/>
-                                <connections>
-                                    <action selector="precedentAction:" destination="AFj-A9-IPM" eventType="touchUpInside" id="LNk-xa-L4y"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plv-50-lP2">
-                                <rect key="frame" x="30" y="271" width="315" height="336"/>
+                                <rect key="frame" x="30" y="271" width="315" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-YB-W7h">
@@ -414,55 +412,57 @@
                                 <rect key="frame" x="143" y="151" width="81" height="30"/>
                                 <state key="normal" title="Télécharger"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkL-gL-F3l">
-                                <rect key="frame" x="187.5" y="637" width="187.5" height="30"/>
-                                <state key="normal" title="Enregister"/>
-                                <connections>
-                                    <action selector="aze:" destination="X09-bD-1tg" eventType="touchUpInside" id="gJk-21-q6Z"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-ZD-Mgb">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kkm-tS-MLc"/>
+                                    <barButtonItem title="Précédent" id="lZk-Ae-Ip8">
+                                        <connections>
+                                            <action selector="precedentAction:" destination="AFj-A9-IPM" id="hAG-Yn-sHE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6YQ-el-VCG"/>
+                                    <barButtonItem title="Enregistrer" id="3kR-0n-0Ra"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yWd-7x-w1F"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Edp-w7-Wzc" firstAttribute="bottom" secondItem="E78-Bs-z0e" secondAttribute="bottom" id="1Tb-Sb-uax"/>
                             <constraint firstItem="ZXs-YB-W7h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j9y-gL-zaB" secondAttribute="trailing" constant="5" id="1oQ-8W-t4u"/>
                             <constraint firstItem="bJp-NV-hCB" firstAttribute="trailing" secondItem="O01-nT-BN5" secondAttribute="trailing" id="3Fp-kv-NLg"/>
                             <constraint firstItem="j9y-gL-zaB" firstAttribute="top" secondItem="Oab-6y-06A" secondAttribute="bottom" constant="30" id="8d4-8y-Ex9"/>
-                            <constraint firstItem="XkL-gL-F3l" firstAttribute="leading" secondItem="Edp-w7-Wzc" secondAttribute="trailing" id="DJa-Ir-YcO"/>
                             <constraint firstItem="dsQ-gm-9lR" firstAttribute="leading" secondItem="E78-Bs-z0e" secondAttribute="leading" id="KhF-HE-aAL"/>
                             <constraint firstItem="Oab-6y-06A" firstAttribute="top" secondItem="jCu-5d-Fxp" secondAttribute="bottom" constant="20" id="M6y-Dm-7ai"/>
                             <constraint firstItem="jCu-5d-Fxp" firstAttribute="leading" secondItem="tJ9-kN-4Rd" secondAttribute="trailing" constant="20" id="Od8-hb-hNy"/>
-                            <constraint firstItem="XkL-gL-F3l" firstAttribute="leading" secondItem="Edp-w7-Wzc" secondAttribute="trailing" id="RXm-V6-aPY"/>
                             <constraint firstItem="E78-Bs-z0e" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oab-6y-06A" secondAttribute="trailing" constant="5" id="TWB-lb-RTp"/>
                             <constraint firstItem="j9y-gL-zaB" firstAttribute="leading" secondItem="jCu-5d-Fxp" secondAttribute="leading" id="W6a-dc-17J"/>
                             <constraint firstItem="E78-Bs-z0e" firstAttribute="trailing" secondItem="dsQ-gm-9lR" secondAttribute="trailing" id="XFD-5t-BWf"/>
                             <constraint firstItem="bJp-NV-hCB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E78-Bs-z0e" secondAttribute="leading" constant="5" id="Z6u-hQ-op0"/>
                             <constraint firstItem="ZXs-YB-W7h" firstAttribute="centerY" secondItem="j9y-gL-zaB" secondAttribute="centerY" id="Zia-5q-etX"/>
                             <constraint firstItem="jCu-5d-Fxp" firstAttribute="firstBaseline" secondItem="tJ9-kN-4Rd" secondAttribute="firstBaseline" id="ZmE-Iq-iSb"/>
-                            <constraint firstItem="E78-Bs-z0e" firstAttribute="trailing" secondItem="XkL-gL-F3l" secondAttribute="trailing" id="bQi-iv-v7Y"/>
+                            <constraint firstItem="lQa-ZD-Mgb" firstAttribute="top" secondItem="plv-50-lP2" secondAttribute="bottom" constant="20" id="Zzu-PF-yAz"/>
                             <constraint firstItem="Oab-6y-06A" firstAttribute="firstBaseline" secondItem="O01-nT-BN5" secondAttribute="firstBaseline" id="bzL-xH-2Jq"/>
                             <constraint firstItem="Oab-6y-06A" firstAttribute="leading" secondItem="jCu-5d-Fxp" secondAttribute="leading" id="cFu-1G-x8M"/>
                             <constraint firstItem="jCu-5d-Fxp" firstAttribute="top" secondItem="dsQ-gm-9lR" secondAttribute="bottom" constant="60" id="e3W-fB-uNk"/>
                             <constraint firstItem="dsQ-gm-9lR" firstAttribute="top" secondItem="E78-Bs-z0e" secondAttribute="top" id="fnq-LI-OF5"/>
-                            <constraint firstItem="Edp-w7-Wzc" firstAttribute="top" secondItem="plv-50-lP2" secondAttribute="bottom" constant="30" id="gXh-0J-rMr"/>
                             <constraint firstItem="plv-50-lP2" firstAttribute="top" secondItem="j9y-gL-zaB" secondAttribute="bottom" constant="30" id="izU-eZ-Bhg"/>
                             <constraint firstItem="O01-nT-BN5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E78-Bs-z0e" secondAttribute="leading" constant="5" id="l5a-qN-CPQ"/>
+                            <constraint firstItem="lQa-ZD-Mgb" firstAttribute="trailing" secondItem="E78-Bs-z0e" secondAttribute="trailing" id="lmp-KF-xxH"/>
+                            <constraint firstItem="lQa-ZD-Mgb" firstAttribute="leading" secondItem="E78-Bs-z0e" secondAttribute="leading" id="mL2-xI-iuB"/>
                             <constraint firstItem="E78-Bs-z0e" firstAttribute="trailing" secondItem="plv-50-lP2" secondAttribute="trailing" constant="30" id="mya-9V-krb"/>
                             <constraint firstItem="j9y-gL-zaB" firstAttribute="centerY" secondItem="bJp-NV-hCB" secondAttribute="centerY" id="qNm-9K-LOG"/>
-                            <constraint firstItem="XkL-gL-F3l" firstAttribute="width" secondItem="Edp-w7-Wzc" secondAttribute="width" id="qgh-0P-Dom"/>
                             <constraint firstItem="plv-50-lP2" firstAttribute="leading" secondItem="E78-Bs-z0e" secondAttribute="leading" constant="30" id="sli-Eq-dRC"/>
                             <constraint firstItem="E78-Bs-z0e" firstAttribute="trailing" secondItem="ZXs-YB-W7h" secondAttribute="trailing" constant="30" id="snq-wp-MJQ"/>
                             <constraint firstItem="tJ9-kN-4Rd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E78-Bs-z0e" secondAttribute="leading" constant="5" id="soV-PT-Re3"/>
                             <constraint firstItem="jCu-5d-Fxp" firstAttribute="centerX" secondItem="Txp-dD-HUr" secondAttribute="centerX" id="uRr-qh-AwH"/>
+                            <constraint firstItem="lQa-ZD-Mgb" firstAttribute="bottom" secondItem="E78-Bs-z0e" secondAttribute="bottom" id="vyE-xL-x4F"/>
                             <constraint firstItem="O01-nT-BN5" firstAttribute="trailing" secondItem="tJ9-kN-4Rd" secondAttribute="trailing" id="wQM-5Q-aoE"/>
-                            <constraint firstItem="Edp-w7-Wzc" firstAttribute="leading" secondItem="E78-Bs-z0e" secondAttribute="leading" id="xKP-mL-y96"/>
-                            <constraint firstItem="XkL-gL-F3l" firstAttribute="bottom" secondItem="E78-Bs-z0e" secondAttribute="bottom" id="zF1-Hn-EkR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E78-Bs-z0e"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIk-KH-2Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="X09-bD-1tg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="569" y="942"/>
         </scene>
