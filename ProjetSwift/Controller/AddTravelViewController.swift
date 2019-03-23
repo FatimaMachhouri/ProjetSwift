@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class AddTravelViewController: UIViewController {
-//creer le truc 
     
     @IBAction func precedentAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

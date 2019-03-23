@@ -16,6 +16,7 @@
 		16C468422244DB4800494E57 /* ProjetSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C468412244DB4800494E57 /* ProjetSwiftTests.swift */; };
 		16C4684D2244DB4800494E57 /* ProjetSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4684C2244DB4800494E57 /* ProjetSwiftUITests.swift */; };
 		16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4685B2244FE8500494E57 /* AddTravelViewController.swift */; };
+		16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F18A9322465C58002714F5 /* TravelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		16C4684C2244DB4800494E57 /* ProjetSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetSwiftUITests.swift; sourceTree = "<group>"; };
 		16C4684E2244DB4800494E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C4685B2244FE8500494E57 /* AddTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelViewController.swift; sourceTree = "<group>"; };
+		16F18A9322465C58002714F5 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				16C4682B2244DB4600494E57 /* ViewController.swift */,
 				16C4682D2244DB4600494E57 /* Main.storyboard */,
 				16C468332244DB4800494E57 /* Assets.xcassets */,
+				16F18A9322465C58002714F5 /* TravelTableViewCell.swift */,
 				16C468352244DB4800494E57 /* LaunchScreen.storyboard */,
 				16C468382244DB4800494E57 /* Info.plist */,
 				16C468302244DB4600494E57 /* ProjetSwift.xcdatamodeld */,
@@ -273,6 +276,7 @@
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
+				16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */,
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
