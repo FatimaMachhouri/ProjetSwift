@@ -390,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="4413.6000000000004" y="1001.649175412294"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Person View Controller-->
         <scene sceneID="0yl-BE-BUQ">
             <objects>
-                <viewController id="fej-a4-Ah0" sceneMemberID="viewController">
+                <viewController id="fej-a4-Ah0" customClass="AddPersonViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E4u-Ji-PC1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -439,7 +439,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iXO-ja-m5l"/>
-                                    <barButtonItem title="Précédent" id="K9D-Uu-kAi"/>
+                                    <barButtonItem title="Précédent" id="K9D-Uu-kAi">
+                                        <connections>
+                                            <action selector="precedentAction:" destination="fej-a4-Ah0" id="GbX-t1-b84"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="g4r-a5-Dht"/>
                                     <barButtonItem title="Enregistrer" id="gHd-0B-hJx"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qnu-uN-1Qm"/>

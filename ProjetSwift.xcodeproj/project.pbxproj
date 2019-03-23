@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */; };
 		16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C468292244DB4600494E57 /* AppDelegate.swift */; };
 		16C4682C2244DB4600494E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4682B2244DB4600494E57 /* ViewController.swift */; };
 		16C4682F2244DB4600494E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C4682D2244DB4600494E57 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		16C468262244DB4600494E57 /* ProjetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C468292244DB4600494E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C4682B2244DB4600494E57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				16C4685B2244FE8500494E57 /* AddTravelViewController.swift */,
+				169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
 				16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */,
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
+				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
