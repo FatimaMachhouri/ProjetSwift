@@ -38,8 +38,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dZO-JD-XFe">
                                                     <rect key="frame" x="0.0" y="0.0" width="63.5" height="53.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="dZO-JD-XFe" secondAttribute="height" multiplier="63:53" id="HQU-RQ-aPj"/>
-                                                        <constraint firstAttribute="width" secondItem="dZO-JD-XFe" secondAttribute="height" multiplier="63:53" id="awK-Tp-zal"/>
+                                                        <constraint firstAttribute="width" constant="63.5" id="9pz-L9-ljf"/>
+                                                        <constraint firstAttribute="height" constant="53.5" id="i6o-gD-njO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4A-IV-wgJ">
@@ -58,6 +58,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageViewer" destination="dZO-JD-XFe" id="ucK-oq-z7E"/>
                                             <outlet property="travelNameLabel" destination="C4A-IV-wgJ" id="2oe-30-hZX"/>
                                             <segue destination="9wj-rh-T96" kind="show" id="Fxi-bv-jHC"/>
                                         </connections>
@@ -531,6 +532,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oab-6y-06A">
                                 <rect key="frame" x="143" y="151" width="81" height="30"/>
                                 <state key="normal" title="Télécharger"/>
+                                <connections>
+                                    <action selector="loadPhotoAction:" destination="AFj-A9-IPM" eventType="touchUpInside" id="VlZ-Qp-7XR"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-ZD-Mgb">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>

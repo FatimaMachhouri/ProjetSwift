@@ -12,6 +12,8 @@ class TravelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var travelNameLabel: UILabel!
     
+    @IBOutlet weak var imageViewer: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

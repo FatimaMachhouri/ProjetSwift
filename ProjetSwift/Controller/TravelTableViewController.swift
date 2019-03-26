@@ -36,6 +36,7 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         guard let travel = self.travels.get(travelAt: indexPath.row)
             else { return cell }
         (cell as! TravelTableViewCell).travelNameLabel?.text = travel.travelName
+        (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
         return cell
     }
     

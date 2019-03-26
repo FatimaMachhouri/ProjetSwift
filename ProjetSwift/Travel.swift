@@ -13,8 +13,13 @@ extension Travel {
         return self.travelName ?? ""
     }
     
-    convenience init(name: String) {
+    public var pic: Data {
+        return self.picture ?? Data()
+    }
+    
+    convenience init(name: String, pic: Data) {
         self.init(context: CoreDataManager.context)
         self.travelName = name
+        self.picture = pic
     }
 }

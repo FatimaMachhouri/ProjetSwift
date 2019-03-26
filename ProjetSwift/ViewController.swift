@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     
     @IBAction func unwindAfterNewTravelCreated(segue: UIStoryboardSegue) {
         if let newTravelController = segue.source as? AddTravelViewController {
-            if let travelName = newTravelController.travelNameLabel {
-                self.tableViewController.travels.add(travel: Travel(name: travelName.text ?? " - "))
+            if let travelName = newTravelController.travelNameLabel, let picture = newTravelController.travelPic {
+                self.tableViewController.travels.add(travel: Travel(name: travelName.text ?? " - ", pic: picture.pngData() ?? Data()))
             }
         }
     }
