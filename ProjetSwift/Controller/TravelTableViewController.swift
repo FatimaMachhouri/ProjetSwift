@@ -32,15 +32,25 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         return configure(cell: cell, atIndexPath: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            self.travels.delete(travelAt: indexPath.row)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+ 
     private func configure(cell: UITableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
-        guard let travel = self.travels.get(travelAt: indexPath.row)
-            else { return cell }
+        let travel = self.travels.get(travelAt: indexPath.row)
         (cell as! TravelTableViewCell).travelNameLabel?.text = travel.travelName
         (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
         return cell
     }
     
 }
+
 
 extension TravelTableViewController: TravelSetViewModelDelegate {
     func dataSetChanged() {
@@ -55,6 +65,5 @@ extension TravelTableViewController: TravelSetViewModelDelegate {
          */
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
-    
     
 }

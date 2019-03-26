@@ -12,7 +12,6 @@ import CoreData
 
 protocol TravelSetViewModelDelegate {
     func dataSetChanged()
-    
     func travelAdded(at indexPath: IndexPath)
 }
 
@@ -34,8 +33,12 @@ class TravelSetViewModel {
         return self.travelFetched.fetchedObjects?.count ?? 0
     }
     
-    public func get(travelAt index: Int) -> Travel? {
+    public func get(travelAt index: Int) -> Travel {
         return self.travelFetched.object(at: IndexPath(row: index, section: 0))
     }
     
+    public func delete(travelAt index: Int) {
+        let travel = self.travelFetched.object(at: IndexPath(row: index, section: 0))
+        CoreDataManager.context.delete(travel)
+    }
 }

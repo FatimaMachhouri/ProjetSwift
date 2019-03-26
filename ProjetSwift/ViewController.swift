@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     var tableViewController: TravelTableViewController!
     
