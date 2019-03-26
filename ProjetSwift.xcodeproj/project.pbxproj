@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */; };
+		16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13221224A2838001C8812 /* CoreDataManager.swift */; };
+		16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13223224A28C6001C8812 /* TravelFetchResultController.swift */; };
+		16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13225224A2AFD001C8812 /* TravelTableViewController.swift */; };
+		16C13229224A2B76001C8812 /* TravelSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13228224A2B76001C8812 /* TravelSetViewModel.swift */; };
+		16C1322B224A2FF1001C8812 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C1322A224A2FF1001C8812 /* Travel.swift */; };
 		16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C468292244DB4600494E57 /* AppDelegate.swift */; };
 		16C4682C2244DB4600494E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4682B2244DB4600494E57 /* ViewController.swift */; };
 		16C4682F2244DB4600494E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C4682D2244DB4600494E57 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		16C13221224A2838001C8812 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		16C13223224A28C6001C8812 /* TravelFetchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFetchResultController.swift; sourceTree = "<group>"; };
+		16C13225224A2AFD001C8812 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
+		16C13228224A2B76001C8812 /* TravelSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelSetViewModel.swift; sourceTree = "<group>"; };
+		16C1322A224A2FF1001C8812 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		16C468262244DB4600494E57 /* ProjetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C468292244DB4600494E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C4682B2244DB4600494E57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16C13227224A2B5E001C8812 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				16C13228224A2B76001C8812 /* TravelSetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		16C4681D2244DB4600494E57 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +123,7 @@
 		16C468282244DB4600494E57 /* ProjetSwift */ = {
 			isa = PBXGroup;
 			children = (
+				16C13227224A2B5E001C8812 /* ViewModel */,
 				16C4685A2244FE6700494E57 /* Controller */,
 				16C468292244DB4600494E57 /* AppDelegate.swift */,
 				16C4682B2244DB4600494E57 /* ViewController.swift */,
@@ -114,6 +133,8 @@
 				16C468352244DB4800494E57 /* LaunchScreen.storyboard */,
 				16C468382244DB4800494E57 /* Info.plist */,
 				16C468302244DB4600494E57 /* ProjetSwift.xcdatamodeld */,
+				16C13221224A2838001C8812 /* CoreDataManager.swift */,
+				16C1322A224A2FF1001C8812 /* Travel.swift */,
 			);
 			path = ProjetSwift;
 			sourceTree = "<group>";
@@ -141,6 +162,8 @@
 			children = (
 				16C4685B2244FE8500494E57 /* AddTravelViewController.swift */,
 				169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */,
+				16C13223224A28C6001C8812 /* TravelFetchResultController.swift */,
+				16C13225224A2AFD001C8812 /* TravelTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,12 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C1322B224A2FF1001C8812 /* Travel.swift in Sources */,
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
+				16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
 				16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */,
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
+				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
+				16C13229224A2B76001C8812 /* TravelSetViewModel.swift in Sources */,
 				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
+				16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

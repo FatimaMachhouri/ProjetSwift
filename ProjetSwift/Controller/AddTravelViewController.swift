@@ -9,10 +9,18 @@
 import Foundation
 import UIKit
 
-class AddTravelViewController: UIViewController {
+class AddTravelViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var travelNameLabel: UITextField!
+    @IBOutlet weak var personNameLabel: UITextField!
     
     @IBAction func precedentAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }
