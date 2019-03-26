@@ -27,7 +27,7 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.travelPic = pickedImage
+            travelPic = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)
     }
