@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Participate" representedClassName="Participate" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="participate_person" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="person_participate" inverseEntity="Person" syncable="YES"/>
+        <relationship name="participate_travel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Travel" inverseName="travel_participate" inverseEntity="Travel" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="personName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person_participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participate" inverseName="participate_person" inverseEntity="Participate" syncable="YES"/>
+    </entity>
     <entity name="Travel" representedClassName="Travel" syncable="YES" codeGenerationType="class">
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="travelName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="travel_participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participate" inverseName="participate_travel" inverseEntity="Participate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Travel" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Travel" positionX="-325.3046875" positionY="23.21875" width="128" height="90"/>
+        <element name="Person" positionX="66.62890625" positionY="20.85546875" width="128" height="75"/>
+        <element name="Participate" positionX="-122.36328125" positionY="94.953125" width="128" height="105"/>
     </elements>
 </model>
