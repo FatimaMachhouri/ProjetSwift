@@ -36,7 +36,11 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         guard let travel = self.travels.get(travelAt: indexPath.row)
             else { return cell }
         (cell as! TravelTableViewCell).travelNameLabel?.text = travel.travelName
-        (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
+        // Hack to flip image to the right orientation
+        if let cgImg = UIImage(data: travel.pic)?.cgImage {
+            let pic = UIImage(cgImage: cgImg, scale: 1.0, orientation: .down)
+            (cell as! TravelTableViewCell).imageViewer.image = pic
+        }
         return cell
     }
     
