@@ -213,10 +213,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0c-HL-qQd">
-                                <rect key="frame" x="275" y="59.5" width="30" height="30"/>
-                                <state key="normal" title="X"/>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxd-fO-E22">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -269,16 +265,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2sV-6z-iMN" firstAttribute="trailing" secondItem="l0c-HL-qQd" secondAttribute="trailing" constant="70" id="Dnj-m8-90I"/>
                             <constraint firstItem="bxd-fO-E22" firstAttribute="bottom" secondItem="2sV-6z-iMN" secondAttribute="bottom" id="GOU-Cw-gJ2"/>
                             <constraint firstItem="2sV-6z-iMN" firstAttribute="trailing" secondItem="ZVS-2D-qqj" secondAttribute="trailing" constant="20" id="GvQ-Ky-uGc"/>
-                            <constraint firstItem="l0c-HL-qQd" firstAttribute="centerY" secondItem="Hxk-6K-zWP" secondAttribute="centerY" id="Nip-Ai-PhF"/>
-                            <constraint firstItem="ZVS-2D-qqj" firstAttribute="top" secondItem="l0c-HL-qQd" secondAttribute="bottom" constant="20" id="To2-DJ-81i"/>
                             <constraint firstItem="bxd-fO-E22" firstAttribute="leading" secondItem="2sV-6z-iMN" secondAttribute="leading" id="gyJ-my-2HJ"/>
                             <constraint firstItem="Hxk-6K-zWP" firstAttribute="top" secondItem="2sV-6z-iMN" secondAttribute="top" id="jA9-hV-FtV"/>
                             <constraint firstItem="Hxk-6K-zWP" firstAttribute="centerX" secondItem="3ZY-SQ-SIz" secondAttribute="centerX" id="l9n-0N-o0f"/>
                             <constraint firstItem="bxd-fO-E22" firstAttribute="top" secondItem="ZVS-2D-qqj" secondAttribute="bottom" constant="20" id="qre-6A-TTN"/>
                             <constraint firstItem="bxd-fO-E22" firstAttribute="trailing" secondItem="2sV-6z-iMN" secondAttribute="trailing" id="rv0-bQ-Tcq"/>
+                            <constraint firstItem="ZVS-2D-qqj" firstAttribute="top" secondItem="Hxk-6K-zWP" secondAttribute="bottom" constant="24.5" id="tya-oJ-mEY"/>
                             <constraint firstItem="ZVS-2D-qqj" firstAttribute="leading" secondItem="2sV-6z-iMN" secondAttribute="leading" constant="20" id="vRU-Ib-JPX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2sV-6z-iMN"/>
