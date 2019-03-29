@@ -16,6 +16,16 @@ class PersonDAO {
         _ = CoreDataManager.save()
     }
     
+    static func fetchAll() -> [Person]?{
+        self.request.predicate = nil
+        do{
+            return try CoreDataManager.context.fetch(self.request)
+        }
+        catch{
+            return nil
+        }
+    }
+    
     static func search(forName name: String) -> [Person]? {
         self.request.predicate = NSPredicate(format: "personName == %@", name)
         do {

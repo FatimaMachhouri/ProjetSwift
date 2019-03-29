@@ -26,6 +26,17 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destController = segue.destination as? BalanceViewController {
+            if let cell = sender as? TravelTableViewCell {
+                guard let indexPath = self.tableView.indexPath(for: cell) else{
+                    return
+                }
+                destController.travel = self.tableViewController.travels.get(travelAt: indexPath.row)
+                print(self.tableViewController.travels.get(travelAt: indexPath.row))
+            }
+        }
+    }
 }
 
