@@ -560,7 +560,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6YQ-el-VCG"/>
                                     <barButtonItem title="Enregistrer" id="3kR-0n-0Ra">
                                         <connections>
-                                            <segue destination="vdJ-Cp-89I" kind="unwind" unwindAction="unwindAfterNewTravelCreatedWithSegue:" id="SSJ-3j-Cvw"/>
+                                            <segue destination="vdJ-Cp-89I" kind="unwind" identifier="okNewTravelSegue" unwindAction="unwindAfterNewTravelCreatedWithSegue:" id="SSJ-3j-Cvw"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yWd-7x-w1F"/>

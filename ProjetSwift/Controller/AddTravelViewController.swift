@@ -16,6 +16,7 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
     var travelPic: UIImage? = nil
     @IBOutlet weak var personTableView: UITableView!
     var persons: [String] = []
+    var newTravel: Travel? = nil
     
     @IBAction func loadPhotoAction(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
@@ -81,6 +82,36 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         cell.textLabel?.text = self.persons[indexPath.row]
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "okNewTravelSegue" {
+            if travelNameLabel.text != "" {
+                self.newTravel = Travel(name: travelNameLabel.text ?? " - ", pic: travelPic?.pngData() ?? Data())
+        
+                for pName in persons {
+                    if let persons = PersonDAO.search(forName: pName) {
+                        var person: Person
+                        if persons.count > 0 {
+                            person = persons[0]
+                        }
+                        else {
+                            person = Person(name: pName)
+                        }
+                        let participate: Participate = Participate(dateS: Date.init())
+                        person.addToPerson_participate(participate)
+                        self.newTravel?.addToTravel_participate(participate)
+
+                    }
+                }
+            }
+            else {
+                newTravel = nil
+            }
+        }
+        else {
+            newTravel = nil
+        }
     }
     
     

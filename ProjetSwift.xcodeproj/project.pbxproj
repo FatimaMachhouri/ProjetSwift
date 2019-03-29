@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162BD505224E174F00ACE546 /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD504224E174F00ACE546 /* PersonDAO.swift */; };
+		162BD508224E194D00ACE546 /* Participate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD507224E194D00ACE546 /* Participate.swift */; };
+		162BD50A224E198200ACE546 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD509224E198200ACE546 /* Person.swift */; };
 		169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */; };
 		16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13221224A2838001C8812 /* CoreDataManager.swift */; };
 		16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13223224A28C6001C8812 /* TravelFetchResultController.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		162BD504224E174F00ACE546 /* PersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
+		162BD507224E194D00ACE546 /* Participate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participate.swift; sourceTree = "<group>"; };
+		162BD509224E198200ACE546 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		16C13221224A2838001C8812 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		16C13223224A28C6001C8812 /* TravelFetchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFetchResultController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162BD503224E143900ACE546 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				162BD504224E174F00ACE546 /* PersonDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		162BD506224E192B00ACE546 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16C1322A224A2FF1001C8812 /* Travel.swift */,
+				162BD507224E194D00ACE546 /* Participate.swift */,
+				162BD509224E198200ACE546 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		16C13227224A2B5E001C8812 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +147,8 @@
 		16C468282244DB4600494E57 /* ProjetSwift */ = {
 			isa = PBXGroup;
 			children = (
+				162BD506224E192B00ACE546 /* Model */,
+				162BD503224E143900ACE546 /* DAO */,
 				16C13227224A2B5E001C8812 /* ViewModel */,
 				16C4685A2244FE6700494E57 /* Controller */,
 				16C468292244DB4600494E57 /* AppDelegate.swift */,
@@ -134,7 +160,6 @@
 				16C468382244DB4800494E57 /* Info.plist */,
 				16C468302244DB4600494E57 /* ProjetSwift.xcdatamodeld */,
 				16C13221224A2838001C8812 /* CoreDataManager.swift */,
-				16C1322A224A2FF1001C8812 /* Travel.swift */,
 			);
 			path = ProjetSwift;
 			sourceTree = "<group>";
@@ -303,11 +328,14 @@
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
 				16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
+				162BD50A224E198200ACE546 /* Person.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
+				162BD505224E174F00ACE546 /* PersonDAO.swift in Sources */,
 				16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */,
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
 				16C13229224A2B76001C8812 /* TravelSetViewModel.swift in Sources */,
+				162BD508224E194D00ACE546 /* Participate.swift in Sources */,
 				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
 				16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */,
 			);
