@@ -10,6 +10,8 @@
 		162BD505224E174F00ACE546 /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD504224E174F00ACE546 /* PersonDAO.swift */; };
 		162BD508224E194D00ACE546 /* Participate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD507224E194D00ACE546 /* Participate.swift */; };
 		162BD50A224E198200ACE546 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD509224E198200ACE546 /* Person.swift */; };
+		162BD510224E48A600ACE546 /* ParticipateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD50F224E48A600ACE546 /* ParticipateDAO.swift */; };
+		162BD512224E4BFA00ACE546 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD511224E4BFA00ACE546 /* BalanceViewController.swift */; };
 		169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */; };
 		16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13221224A2838001C8812 /* CoreDataManager.swift */; };
 		16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13223224A28C6001C8812 /* TravelFetchResultController.swift */; };
@@ -28,7 +30,6 @@
 		16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F18A9322465C58002714F5 /* TravelTableViewCell.swift */; };
 		3BA123C7224E3B3100D594D9 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */; };
 		3BA123CB224E3D3300D594D9 /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */; };
-		3BA123CD224E4F7700D594D9 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CC224E4F7700D594D9 /* BalanceViewController.swift */; };
 		3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		162BD504224E174F00ACE546 /* PersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		162BD507224E194D00ACE546 /* Participate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participate.swift; sourceTree = "<group>"; };
 		162BD509224E198200ACE546 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		162BD50F224E48A600ACE546 /* ParticipateDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateDAO.swift; sourceTree = "<group>"; };
+		162BD511224E4BFA00ACE546 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		16C13221224A2838001C8812 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		16C13223224A28C6001C8812 /* TravelFetchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFetchResultController.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		16F18A9322465C58002714F5 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 		3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 		3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
-		3BA123CC224E4F7700D594D9 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				162BD504224E174F00ACE546 /* PersonDAO.swift */,
+				162BD50F224E48A600ACE546 /* ParticipateDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -195,12 +198,12 @@
 		16C4685A2244FE6700494E57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				162BD511224E4BFA00ACE546 /* BalanceViewController.swift */,
 				16C4685B2244FE8500494E57 /* AddTravelViewController.swift */,
 				169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */,
 				16C13223224A28C6001C8812 /* TravelFetchResultController.swift */,
 				16C13225224A2AFD001C8812 /* TravelTableViewController.swift */,
 				3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */,
-				3BA123CC224E4F7700D594D9 /* BalanceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,7 +345,6 @@
 				16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				162BD50A224E198200ACE546 /* Person.swift in Sources */,
-				3BA123CD224E4F7700D594D9 /* BalanceViewController.swift in Sources */,
 				3BA123C7224E3B3100D594D9 /* PersonTableViewController.swift in Sources */,
 				3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
@@ -351,6 +353,8 @@
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
 				16C13229224A2B76001C8812 /* TravelSetViewModel.swift in Sources */,
+				162BD510224E48A600ACE546 /* ParticipateDAO.swift in Sources */,
+				162BD512224E4BFA00ACE546 /* BalanceViewController.swift in Sources */,
 				162BD508224E194D00ACE546 /* Participate.swift in Sources */,
 				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
 				16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */,

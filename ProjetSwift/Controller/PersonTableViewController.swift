@@ -25,7 +25,9 @@ class PersonTableViewController: NSObject, UITableViewDataSource, PersonSetViewM
     }
     
     func personAdded(at indexPath: IndexPath) {
-        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [indexPath], with: UITableView.RowAnimation.middle)
+        self.tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

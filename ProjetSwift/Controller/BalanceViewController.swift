@@ -1,4 +1,3 @@
-//
 //  BalanceViewController.swift
 //  ProjetSwift
 //
@@ -34,5 +33,18 @@ class BalanceViewController: UIViewController {
     }
     */
 
-
+    @IBAction func unwindAfterNewPersonCreated(segue: UIStoryboardSegue) {
+        if let addPersonController = segue.source as? AddPersonViewController {
+            if let person = addPersonController.newPerson {
+                self.tableViewController.persons.add(person: person)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destController = segue.destination as? AddPersonViewController {
+            destController.travel = self.travel
+        }
+    }
+    
 }

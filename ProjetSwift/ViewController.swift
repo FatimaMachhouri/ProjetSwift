@@ -34,7 +34,7 @@ class ViewController: UIViewController {
                     return
                 }
                 destController.travel = self.tableViewController.travels.get(travelAt: indexPath.row)
-                print(self.tableViewController.travels.get(travelAt: indexPath.row))
+                //print(self.tableViewController.travels.get(travelAt: indexPath.row))
             }
         }
     }

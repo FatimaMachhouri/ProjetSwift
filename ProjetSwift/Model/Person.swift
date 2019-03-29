@@ -17,4 +17,5 @@ extension Person {
         self.init(context: CoreDataManager.context)
         self.personName = name
     }
+    
 }
