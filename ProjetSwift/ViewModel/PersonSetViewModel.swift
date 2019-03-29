@@ -26,6 +26,12 @@ class PersonSetViewModel {
         }
     }
     
+    init(travel: Travel) {
+        if let persons = PersonDAO.search(forTravel: travel) {
+            self.dataset = persons
+        }
+    }
+    
     public func add(person: Person){
         self.dataset.append(person)
         self.delegate?.personAdded(at: IndexPath(row: self.dataset.count-1, section: 0))

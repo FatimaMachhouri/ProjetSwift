@@ -101,7 +101,6 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
                         let participate: Participate = Participate(dateS: Date.init())
                         person.addToPerson_participate(participate)
                         self.newTravel?.addToTravel_participate(participate)
-
                     }
                 }
             }

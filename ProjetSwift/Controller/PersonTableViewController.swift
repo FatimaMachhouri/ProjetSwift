@@ -12,8 +12,8 @@ class PersonTableViewController: NSObject, UITableViewDataSource, PersonSetViewM
     var persons: PersonSetViewModel
     var tableView: UITableView
     
-    init(tableView: UITableView) {
-        self.persons = PersonSetViewModel()
+    init(tableView: UITableView, travel: Travel) {
+        self.persons = PersonSetViewModel(travel: travel)
         self.tableView = tableView
         super.init()
         self.tableView.dataSource = self

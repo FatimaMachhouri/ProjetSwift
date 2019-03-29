@@ -26,6 +26,20 @@ class PersonDAO {
         }
     }
     
+    static func search(forTravel travel: Travel) -> [Person]? {
+        guard let participates = travel.travel_participate else {
+            return nil
+        }
+        var result: [Person]? = []
+        for participate in participates {
+            if let person = (participate as! Participate).participate_person {
+                result?.append(person)
+                print(person)
+            }
+        }
+        return result
+    }
+    
     static func search(forName name: String) -> [Person]? {
         self.request.predicate = NSPredicate(format: "personName == %@", name)
         do {

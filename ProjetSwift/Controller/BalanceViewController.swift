@@ -17,7 +17,10 @@ class BalanceViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tableViewController = PersonTableViewController(tableView: self.tableView)
+        guard let t = travel else {
+            fatalError("Unusual error")
+        }
+        self.tableViewController = PersonTableViewController(tableView: self.tableView, travel: t)
     }
     
 
@@ -30,5 +33,6 @@ class BalanceViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
