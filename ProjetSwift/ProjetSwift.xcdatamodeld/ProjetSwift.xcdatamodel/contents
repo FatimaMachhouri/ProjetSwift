@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="expenseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expenseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expensePicture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="expense_persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="person_expenses" inverseEntity="Person" syncable="YES"/>
+        <relationship name="expense_travel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Travel" inverseName="travel_expenses" inverseEntity="Travel" syncable="YES"/>
+    </entity>
     <entity name="Participate" representedClassName="Participate" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -8,16 +16,19 @@
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="personName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person_expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expense_persons" inverseEntity="Expense" syncable="YES"/>
         <relationship name="person_participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participate" inverseName="participate_person" inverseEntity="Participate" syncable="YES"/>
     </entity>
     <entity name="Travel" representedClassName="Travel" syncable="YES" codeGenerationType="class">
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="travelName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="travel_expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expense_travel" inverseEntity="Expense" syncable="YES"/>
         <relationship name="travel_participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participate" inverseName="participate_travel" inverseEntity="Participate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Participate" positionX="-122.36328125" positionY="94.953125" width="128" height="103"/>
-        <element name="Person" positionX="66.62890625" positionY="20.85546875" width="128" height="75"/>
-        <element name="Travel" positionX="-325.3046875" positionY="23.21875" width="128" height="90"/>
+        <element name="Participate" positionX="-123.2421875" positionY="174.09765625" width="128" height="103"/>
+        <element name="Person" positionX="87.00390625" positionY="30.20703125" width="128" height="90"/>
+        <element name="Travel" positionX="-405.59765625" positionY="9.23046875" width="128" height="105"/>
+        <element name="Expense" positionX="-128.6875" positionY="-109.12109375" width="128" height="135"/>
     </elements>
 </model>
