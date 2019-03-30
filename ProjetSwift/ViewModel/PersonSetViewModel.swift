@@ -34,8 +34,6 @@ class PersonSetViewModel {
     
     public func add(person: Person){
         self.dataset.append(person)
-        print("HAHAH")
-        print(self.dataset.count-1)
         self.delegate?.personAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
     }
     

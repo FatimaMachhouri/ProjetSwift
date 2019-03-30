@@ -12,6 +12,12 @@
 		162BD50A224E198200ACE546 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD509224E198200ACE546 /* Person.swift */; };
 		162BD510224E48A600ACE546 /* ParticipateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD50F224E48A600ACE546 /* ParticipateDAO.swift */; };
 		162BD512224E4BFA00ACE546 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD511224E4BFA00ACE546 /* BalanceViewController.swift */; };
+		1667DF54224FBBDF00D404C2 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1667DF53224FBBDF00D404C2 /* ExpenseViewController.swift */; };
+		168C2D42224FA39200BA383D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C2D41224FA39200BA383D /* Expense.swift */; };
+		168C2D44224FA99800BA383D /* ExpenseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C2D43224FA99800BA383D /* ExpenseDAO.swift */; };
+		168C2D46224FAA3D00BA383D /* ExpenseSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C2D45224FAA3D00BA383D /* ExpenseSetViewModel.swift */; };
+		168C2D4A224FB32D00BA383D /* ExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C2D49224FB32D00BA383D /* ExpenseTableViewController.swift */; };
+		168C2D4C224FB47000BA383D /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C2D4B224FB47000BA383D /* ExpenseTableViewCell.swift */; };
 		169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */; };
 		16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13221224A2838001C8812 /* CoreDataManager.swift */; };
 		16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C13223224A28C6001C8812 /* TravelFetchResultController.swift */; };
@@ -56,6 +62,12 @@
 		162BD509224E198200ACE546 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		162BD50F224E48A600ACE546 /* ParticipateDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateDAO.swift; sourceTree = "<group>"; };
 		162BD511224E4BFA00ACE546 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		1667DF53224FBBDF00D404C2 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		168C2D41224FA39200BA383D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		168C2D43224FA99800BA383D /* ExpenseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDAO.swift; sourceTree = "<group>"; };
+		168C2D45224FAA3D00BA383D /* ExpenseSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSetViewModel.swift; sourceTree = "<group>"; };
+		168C2D49224FB32D00BA383D /* ExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewController.swift; sourceTree = "<group>"; };
+		168C2D4B224FB47000BA383D /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		16C13221224A2838001C8812 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		16C13223224A28C6001C8812 /* TravelFetchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFetchResultController.swift; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 			children = (
 				162BD504224E174F00ACE546 /* PersonDAO.swift */,
 				162BD50F224E48A600ACE546 /* ParticipateDAO.swift */,
+				168C2D43224FA99800BA383D /* ExpenseDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -123,8 +136,19 @@
 				16C1322A224A2FF1001C8812 /* Travel.swift */,
 				162BD507224E194D00ACE546 /* Participate.swift */,
 				162BD509224E198200ACE546 /* Person.swift */,
+				168C2D41224FA39200BA383D /* Expense.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		163328EA224FD26E001DF002 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				168C2D4B224FB47000BA383D /* ExpenseTableViewCell.swift */,
+				3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */,
+				16F18A9322465C58002714F5 /* TravelTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		16C13227224A2B5E001C8812 /* ViewModel */ = {
@@ -132,6 +156,7 @@
 			children = (
 				16C13228224A2B76001C8812 /* TravelSetViewModel.swift */,
 				3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */,
+				168C2D45224FAA3D00BA383D /* ExpenseSetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,12 +192,10 @@
 				16C4682B2244DB4600494E57 /* ViewController.swift */,
 				16C4682D2244DB4600494E57 /* Main.storyboard */,
 				16C468332244DB4800494E57 /* Assets.xcassets */,
-				16F18A9322465C58002714F5 /* TravelTableViewCell.swift */,
 				16C468352244DB4800494E57 /* LaunchScreen.storyboard */,
 				16C468382244DB4800494E57 /* Info.plist */,
 				16C468302244DB4600494E57 /* ProjetSwift.xcdatamodeld */,
 				16C13221224A2838001C8812 /* CoreDataManager.swift */,
-				3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */,
 			);
 			path = ProjetSwift;
 			sourceTree = "<group>";
@@ -198,12 +221,15 @@
 		16C4685A2244FE6700494E57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				163328EA224FD26E001DF002 /* Cell */,
 				162BD511224E4BFA00ACE546 /* BalanceViewController.swift */,
 				16C4685B2244FE8500494E57 /* AddTravelViewController.swift */,
 				169FCE4F2246755F00B03B12 /* AddPersonViewController.swift */,
 				16C13223224A28C6001C8812 /* TravelFetchResultController.swift */,
 				16C13225224A2AFD001C8812 /* TravelTableViewController.swift */,
 				3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */,
+				168C2D49224FB32D00BA383D /* ExpenseTableViewController.swift */,
+				1667DF53224FBBDF00D404C2 /* ExpenseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,23 +365,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168C2D4C224FB47000BA383D /* ExpenseTableViewCell.swift in Sources */,
+				168C2D46224FAA3D00BA383D /* ExpenseSetViewModel.swift in Sources */,
 				16C1322B224A2FF1001C8812 /* Travel.swift in Sources */,
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
 				3BA123CB224E3D3300D594D9 /* PersonSetViewModel.swift in Sources */,
 				16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */,
+				168C2D42224FA39200BA383D /* Expense.swift in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				162BD50A224E198200ACE546 /* Person.swift in Sources */,
 				3BA123C7224E3B3100D594D9 /* PersonTableViewController.swift in Sources */,
+				168C2D4A224FB32D00BA383D /* ExpenseTableViewController.swift in Sources */,
 				3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */,
 				16C4682A2244DB4600494E57 /* AppDelegate.swift in Sources */,
 				162BD505224E174F00ACE546 /* PersonDAO.swift in Sources */,
 				16F18A9422465C58002714F5 /* TravelTableViewCell.swift in Sources */,
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
+				168C2D44224FA99800BA383D /* ExpenseDAO.swift in Sources */,
 				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
 				16C13229224A2B76001C8812 /* TravelSetViewModel.swift in Sources */,
 				162BD510224E48A600ACE546 /* ParticipateDAO.swift in Sources */,
 				162BD512224E4BFA00ACE546 /* BalanceViewController.swift in Sources */,
 				162BD508224E194D00ACE546 /* Participate.swift in Sources */,
+				1667DF54224FBBDF00D404C2 /* ExpenseViewController.swift in Sources */,
 				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
 				16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */,
 			);

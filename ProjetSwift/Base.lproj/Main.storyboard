@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="2560.8000000000002" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Expense View Controller-->
         <scene sceneID="ccg-oF-8PI">
             <objects>
-                <viewController id="3WM-s8-0wi" sceneMemberID="viewController">
+                <viewController id="3WM-s8-0wi" customClass="ExpenseViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ZY-SQ-SIz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
                                 <rect key="frame" x="20" y="109.5" width="335" height="493.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsTravelCell" id="7m1-Ev-wLo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsTravelCell" id="7m1-Ev-wLo" customClass="ExpenseTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7m1-Ev-wLo" id="x0H-Wv-OGy">
@@ -265,6 +265,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="expenseAmountLabel" destination="mRw-Hx-Lgs" id="tw1-EE-Icj"/>
+                                            <outlet property="expenseNameLabel" destination="f4Q-I3-27g" id="JMO-7o-HUJ"/>
                                             <segue destination="Sm6-Pp-cwl" kind="show" id="pCI-AH-hID"/>
                                         </connections>
                                     </tableViewCell>
@@ -285,10 +287,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2sV-6z-iMN"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ZVS-2D-qqj" id="K8U-0d-KxG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbn-n7-Ept" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="1002"/>
+            <point key="canvasLocation" x="3373.5999999999999" y="975.56221889055485"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6wh-Jp-hQq">

@@ -45,6 +45,10 @@ class BalanceViewController: UIViewController {
         if let destController = segue.destination as? AddPersonViewController {
             destController.travel = self.travel
         }
+        
+        if let destController = segue.destination as? ExpenseViewController {
+            destController.travel = self.travel
+        }
     }
     
 }
