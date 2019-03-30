@@ -153,7 +153,7 @@
                                                 <constraint firstItem="F74-IV-5tW" firstAttribute="centerY" secondItem="aWA-bB-8Oz" secondAttribute="centerY" id="Lk8-z1-OXD"/>
                                                 <constraint firstItem="Jol-1m-Wwh" firstAttribute="leading" secondItem="HoY-Af-ZhY" secondAttribute="trailing" constant="25" id="iD7-Ec-at1"/>
                                                 <constraint firstItem="F74-IV-5tW" firstAttribute="leading" secondItem="aWA-bB-8Oz" secondAttribute="leadingMargin" constant="10" id="mEX-DQ-KdH"/>
-                                                <constraint firstItem="HoY-Af-ZhY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F74-IV-5tW" secondAttribute="trailing" constant="70" id="nr5-do-esQ"/>
+                                                <constraint firstItem="HoY-Af-ZhY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F74-IV-5tW" secondAttribute="trailing" constant="40" id="nr5-do-esQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Jol-1m-Wwh" secondAttribute="trailing" constant="10" id="vUx-PI-OxS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -256,9 +256,11 @@
                                             <constraints>
                                                 <constraint firstItem="mRw-Hx-Lgs" firstAttribute="top" secondItem="x0H-Wv-OGy" secondAttribute="topMargin" constant="0.5" id="5Bc-bU-teZ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="f4Q-I3-27g" secondAttribute="bottom" id="QWO-tR-9lP"/>
-                                                <constraint firstItem="mRw-Hx-Lgs" firstAttribute="leading" secondItem="f4Q-I3-27g" secondAttribute="trailing" constant="211" id="SWb-qb-ICg"/>
+                                                <constraint firstItem="mRw-Hx-Lgs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f4Q-I3-27g" secondAttribute="trailing" constant="10" id="SWb-qb-ICg"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mRw-Hx-Lgs" secondAttribute="bottom" constant="0.5" id="es8-uU-y24"/>
                                                 <constraint firstItem="f4Q-I3-27g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x0H-Wv-OGy" secondAttribute="leadingMargin" constant="5" id="fXe-XL-Tzg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mRw-Hx-Lgs" secondAttribute="trailing" constant="5" id="fzg-Rg-BDE"/>
+                                                <constraint firstItem="f4Q-I3-27g" firstAttribute="leading" secondItem="x0H-Wv-OGy" secondAttribute="leadingMargin" constant="5" id="h41-jm-9MY"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mRw-Hx-Lgs" secondAttribute="trailing" constant="5" id="mLL-KA-tmM"/>
                                                 <constraint firstItem="f4Q-I3-27g" firstAttribute="top" secondItem="x0H-Wv-OGy" secondAttribute="topMargin" id="v6v-y9-IXj"/>
                                                 <constraint firstItem="mRw-Hx-Lgs" firstAttribute="centerY" secondItem="f4Q-I3-27g" secondAttribute="centerY" id="z7J-oj-QbC"/>
@@ -295,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="3373.5999999999999" y="975.56221889055485"/>
         </scene>
-        <!--View Controller-->
+        <!--Expense Detail View Controller-->
         <scene sceneID="6wh-Jp-hQq">
             <objects>
-                <viewController id="Sm6-Pp-cwl" sceneMemberID="viewController">
+                <viewController id="Sm6-Pp-cwl" customClass="ExpenseDetailViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GOL-Lx-O88">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -320,7 +322,7 @@
                                 <rect key="frame" x="30" y="322" width="315" height="315"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCell" id="i2W-pm-NMq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsExpenseCell" id="i2W-pm-NMq" customClass="DetailExpenseTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="315" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i2W-pm-NMq" id="ICh-gi-BtI">
@@ -348,9 +350,13 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="n7l-ka-VYZ" secondAttribute="bottom" constant="0.5" id="fVb-0V-ZSs"/>
                                                 <constraint firstItem="b0A-5o-8x7" firstAttribute="bottom" secondItem="ICh-gi-BtI" secondAttribute="bottomMargin" id="g3S-Mh-8h8"/>
                                                 <constraint firstItem="b0A-5o-8x7" firstAttribute="leading" secondItem="ICh-gi-BtI" secondAttribute="leadingMargin" constant="5" id="gaD-lG-LZr"/>
-                                                <constraint firstItem="n7l-ka-VYZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b0A-5o-8x7" secondAttribute="trailing" constant="100" id="q4s-dQ-YVy"/>
+                                                <constraint firstItem="n7l-ka-VYZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b0A-5o-8x7" secondAttribute="trailing" constant="10" id="q4s-dQ-YVy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="personAmountLabel" destination="n7l-ka-VYZ" id="cjt-7F-i3J"/>
+                                            <outlet property="personNameLabel" destination="b0A-5o-8x7" id="vm7-Zn-Y5h"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -391,6 +397,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10d-0r-Nbe"/>
                     </view>
+                    <connections>
+                        <outlet property="expenseAmountLabel" destination="IQn-Jh-kx1" id="j1w-Oz-bms"/>
+                        <outlet property="expenseNameLabel" destination="h5h-kp-A83" id="Kdm-8o-jbu"/>
+                        <outlet property="expensePicture" destination="DWR-na-DU0" id="cwc-Lf-IvS"/>
+                        <outlet property="tableView" destination="WXd-vf-h3V" id="X4o-PU-WKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNO-ZO-Uau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-
 protocol ExpenseSetViewModelDelegate {
     func dataSetChanged()
     func expenseAdded(at indexPath: IndexPath)

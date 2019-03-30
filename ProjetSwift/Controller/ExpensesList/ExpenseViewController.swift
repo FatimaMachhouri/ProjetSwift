@@ -23,5 +23,19 @@ class ExpenseViewController: UIViewController {
         self.tableViewController = ExpenseTableViewController(tableView: tableView, travel: t)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destController = segue.destination as? ExpenseDetailViewController {
+            if let cell = sender as? UITableViewCell {
+                guard let indexPath = self.tableView.indexPath(for: cell) else {
+                    return
+                }
+                destController.expense = self.tableViewController.expenses.get(expenseAt: indexPath.row)
+            }
+        }
+    }
 }
 

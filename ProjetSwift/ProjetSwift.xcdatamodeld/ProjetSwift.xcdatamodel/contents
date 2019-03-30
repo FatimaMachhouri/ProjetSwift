@@ -30,10 +30,10 @@
         <relationship name="travel_participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participate" inverseName="participate_travel" inverseEntity="Participate" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Expense" positionX="-139.9296875" positionY="-151.50390625" width="128" height="120"/>
         <element name="Participate" positionX="-123.2421875" positionY="174.09765625" width="128" height="103"/>
+        <element name="Pay" positionX="56.34375" positionY="-128.73828125" width="128" height="90"/>
         <element name="Person" positionX="87.00390625" positionY="30.20703125" width="128" height="90"/>
         <element name="Travel" positionX="-405.59765625" positionY="9.23046875" width="128" height="105"/>
-        <element name="Expense" positionX="-139.9296875" positionY="-151.50390625" width="128" height="120"/>
-        <element name="Pay" positionX="56.34375" positionY="-128.73828125" width="128" height="90"/>
     </elements>
 </model>
