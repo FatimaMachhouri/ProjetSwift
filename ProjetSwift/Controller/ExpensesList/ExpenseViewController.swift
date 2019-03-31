@@ -36,6 +36,18 @@ class ExpenseViewController: UIViewController {
                 destController.expense = self.tableViewController.expenses.get(expenseAt: indexPath.row)
             }
         }
+        if let destController = segue.destination as? AddExpenseViewController {
+            destController.travel = self.travel
+        }
+
+    }
+    
+    @IBAction func unwindToExpenseViewAfterCreatingExpense(_ unwindSegue: UIStoryboardSegue) {
+        if let addExpenseController = unwindSegue.source as? AddExpenseViewController {
+            if let expense = addExpenseController.newExpense {
+                self.tableViewController.expenses.add(expense: expense)
+            }
+        }
     }
 }
 

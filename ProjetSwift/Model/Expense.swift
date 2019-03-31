@@ -28,6 +28,11 @@ extension Expense {
         self.expensePicture = pic
     }
     
+    convenience init(name: String) {
+        self.init(context: CoreDataManager.context)
+        self.expenseName = name
+    }
+    
     var amount: Float {
         get {
             guard let expense_p = self.expense_pay else {
