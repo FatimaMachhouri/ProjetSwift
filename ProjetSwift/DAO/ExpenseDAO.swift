@@ -50,9 +50,6 @@ class ExpenseDAO {
             //in order to add, we do an assignation
             result[payAmount.pay_person!] = payAmount.amount
         }
-        
-        print("YOUYOU")
-        print(result.count)
         return result
     }
 

@@ -18,17 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Smart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJr-76-5iI">
-                                <rect key="frame" x="139" y="323.5" width="97" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IntelliJ'Travel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHQ-wA-ZMi">
+                                <rect key="frame" x="111" y="448.5" width="153" height="32.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="27"/>
+                                <color key="textColor" red="0.36192081459807601" green="0.6677846342675442" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="launchPicture" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-MR-xlY">
+                                <rect key="frame" x="48" y="143.5" width="279" height="275"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zJr-76-5iI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d5T-mn-4tx"/>
-                            <constraint firstItem="zJr-76-5iI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fDQ-AN-yuG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rHQ-wA-ZMi" secondAttribute="bottom" constant="186" id="gTW-H8-YN6"/>
+                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nCe-aY-ls6"/>
+                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="top" secondItem="OjR-MR-xlY" secondAttribute="bottom" constant="30" id="sCU-51-rh5"/>
+                            <constraint firstItem="OjR-MR-xlY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vTH-DM-268"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +43,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchPicture" width="279" height="275"/>
+    </resources>
 </document>
