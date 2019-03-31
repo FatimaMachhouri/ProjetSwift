@@ -43,6 +43,8 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: TextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
             if text != "" {

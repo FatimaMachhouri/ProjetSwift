@@ -30,6 +30,8 @@ class PersonTableViewController: NSObject, UITableViewDataSource, PersonSetViewM
         self.tableView.endUpdates()
     }
     
+    // MARK: UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.persons.count
     }

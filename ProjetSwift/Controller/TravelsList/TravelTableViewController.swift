@@ -23,6 +23,7 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         self.travels.delegate = self
     }
     
+    // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.travels.count
     }
@@ -51,8 +52,8 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
     
 }
 
-
 extension TravelTableViewController: TravelSetViewModelDelegate {
+    // MARK: TravelSetViewModelDelegate
     func dataSetChanged() {
         self.tableView.reloadData()
     }

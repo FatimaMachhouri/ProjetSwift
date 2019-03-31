@@ -10,11 +10,10 @@ import Foundation
 import UIKit
 
 class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource {
- 
     @IBOutlet weak var travelNameLabel: UITextField!
     @IBOutlet weak var personNameLabel: UITextField!
-    var travelPic: UIImage? = nil
     @IBOutlet weak var personTableView: UITableView!
+    var travelPic: UIImage? = nil
     var persons: [String] = []
     var newTravel: Travel? = nil
     
@@ -42,6 +41,11 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         addPersonToTableView(at: IndexPath(row: self.persons.count-1, section: 0))
     }
     
+    
+    @IBAction func precedentAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func addPersonToTableView(at indexPath: IndexPath) {
         self.personTableView.beginUpdates()
         self.personTableView.insertRows(at: [indexPath], with: UITableView.RowAnimation.middle)
@@ -54,6 +58,8 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.personTableView.endUpdates()
     }
     
+    // MARK: UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
             self.persons.remove(at: indexPath.row)
@@ -62,15 +68,6 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    @IBAction func precedentAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         return true
     }
     
@@ -84,6 +81,15 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         return cell
     }
     
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
+    // MARK: segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okNewTravelSegue" {
             if travelNameLabel.text != "" {

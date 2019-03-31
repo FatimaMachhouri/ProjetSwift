@@ -31,6 +31,8 @@ class ExpenseTableViewController: NSObject, UITableViewDataSource, ExpenseSetVie
         self.tableView.endUpdates()
     }
     
+    // MARK: UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.expenses.count
     }
