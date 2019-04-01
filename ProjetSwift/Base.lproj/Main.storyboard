@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes voyages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ2-np-dkO">
-                                <rect key="frame" x="137.5" y="64" width="100" height="21"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <rect key="frame" x="117" y="64" width="141.5" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8qu-JV-UvV">
-                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="102" id="R4r-RP-ImT" customClass="TravelTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
@@ -83,14 +83,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bDy-LT-a6e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8ub-6Q-CP6"/>
-                            <constraint firstItem="8qu-JV-UvV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C7C-iy-MEw"/>
-                            <constraint firstItem="8qu-JV-UvV" firstAttribute="top" secondItem="jZ2-np-dkO" secondAttribute="bottom" id="EHK-Nx-ksK"/>
+                            <constraint firstItem="8qu-JV-UvV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I7z-0G-knI"/>
                             <constraint firstItem="jZ2-np-dkO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MzS-mD-Fbd"/>
                             <constraint firstItem="jZ2-np-dkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OqI-FZ-3wN"/>
+                            <constraint firstItem="8qu-JV-UvV" firstAttribute="top" secondItem="jZ2-np-dkO" secondAttribute="bottom" constant="15" id="PHO-W5-KXe"/>
+                            <constraint firstItem="8qu-JV-UvV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PYD-U6-kRm"/>
                             <constraint firstItem="bDy-LT-a6e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pgq-OV-5MX"/>
                             <constraint firstItem="bDy-LT-a6e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sko-oO-M2E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qu-JV-UvV" secondAttribute="trailing" id="dcK-X2-O3C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8qu-JV-UvV" secondAttribute="bottom" id="erb-9q-JD5"/>
+                            <constraint firstItem="8qu-JV-UvV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dnG-2j-BSD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -6,6 +6,12 @@
 //  Copyright © 2019 F&Y. All rights reserved.
 //
 
+extension UIImageView {
+    func setRounded() {
+        self.layer.cornerRadius = (self.frame.width / 3)
+        self.layer.masksToBounds = true
+    }
+}
 
 import UIKit
 
@@ -47,6 +53,7 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         let travel = self.travels.get(travelAt: indexPath.row)
         (cell as! TravelTableViewCell).travelNameLabel?.text = travel.travelName
         (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
+        (cell as! TravelTableViewCell).imageViewer.setRounded()
         return cell
     }
     
