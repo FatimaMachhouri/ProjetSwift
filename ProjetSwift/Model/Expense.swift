@@ -28,6 +28,12 @@ extension Expense {
         self.expensePicture = pic
     }
     
+    convenience init(name: String, pic: Data) {
+        self.init(context: CoreDataManager.context)
+        self.expenseName = name
+        self.expensePicture = pic
+    }
+    
     convenience init(name: String) {
         self.init(context: CoreDataManager.context)
         self.expenseName = name

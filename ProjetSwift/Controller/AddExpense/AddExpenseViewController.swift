@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AddExpenseViewController: UIViewController, UITextFieldDelegate {
+class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var expenseName: UITextField!
@@ -18,6 +18,8 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     var tableViewController: AddExpenseTableViewController!
     var newExpense: Expense? = nil
     var travel: Travel? = nil
+    var expensePic: UIImage? = nil
+
     
     @IBAction func precedentAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -32,6 +34,23 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
                 sender.transform = .identity
             }, completion: nil)
         }
+    }
+    
+    @IBAction func loadPhotoAction(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            expensePic = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -82,7 +101,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okNewExpenseSegue" {
             if let name = self.expenseName.text {
-                self.newExpense = Expense(name: name)
+                self.newExpense = Expense(name: name, pic: expensePic?.pngData() ?? Data())
                 self.travel?.addToTravel_expenses(self.newExpense!)
                 for c in self.tableView.visibleCells {
                     let cell = c as? AddExpenseTableViewCell

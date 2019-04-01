@@ -812,6 +812,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-N7-fw9">
                                 <rect key="frame" x="125" y="94.5" width="125" height="30"/>
                                 <state key="normal" title="Télécharger photo"/>
+                                <connections>
+                                    <action selector="loadPhotoAction:" destination="yXo-oW-T7h" eventType="touchUpInside" id="d2Z-4V-5EO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
