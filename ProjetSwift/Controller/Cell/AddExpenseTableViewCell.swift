@@ -12,6 +12,7 @@ class AddExpenseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var buttonCheckBox: UIButton!
+    @IBOutlet weak var amountTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

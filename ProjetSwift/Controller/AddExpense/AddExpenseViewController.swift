@@ -14,6 +14,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var expenseName: UITextField!
     
+    var tableViewController: AddExpenseTableViewController!
     var newExpense: Expense? = nil
     var travel: Travel? = nil
     
@@ -23,6 +24,11 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let t = travel else {
+            fatalError("Unusal error")
+        }
+        self.tableViewController = AddExpenseTableViewController(tableView: self.tableView, travel: t)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +46,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
+    
     
     // Mark: segue
     
