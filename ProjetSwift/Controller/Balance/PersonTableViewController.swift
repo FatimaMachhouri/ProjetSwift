@@ -44,6 +44,8 @@ class PersonTableViewController: NSObject, UITableViewDataSource, PersonSetViewM
     private func configure(cell: BalanceTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
         let person = self.persons.get(personAt: indexPath.row)
         cell.nameLabel.text = person?.name
+        cell.totalLabel.text = person?.totalExpenses.description
+        cell.balanceLabel.text = person?.balancedExpenses.description
         return cell
     }
     

@@ -18,4 +18,28 @@ extension Person {
         self.personName = name
     }
     
+    var balancedExpenses: Float {
+        var result: Float = 0.0
+        guard let concern = self.person_pay else {
+            return 0
+        }
+        for concernAmount in concern {
+            let concernAmount = (concernAmount as! Pay)
+            result = result + concernAmount.amountConcerned
+        }
+        return self.totalExpenses - result
+    }
+    
+    var totalExpenses: Float {
+        var result: Float = 0.0
+        guard let pay = self.person_pay else {
+            return 0
+        }
+        for payAmount in pay {
+            let payAmount = (payAmount as! Pay)
+            result = result + payAmount.amount
+        }
+        return result
+    }
+    
 }
