@@ -40,11 +40,9 @@ class AddExpenseTableViewController: NSObject, UITableViewDataSource, PersonSetV
     private func configure(cell: AddExpenseTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         let person = self.persons.get(personAt: indexPath.row)
         cell.personNameLabel.text = person?.name
-        cell.buttonCheckBox.setImage(UIImage(named:"Checkmarkempty"), for: .normal)
-        cell.buttonCheckBox.setImage(UIImage(named:"Checkmark"), for: .selected)
+        cell.buttonCheckBox.setImage(UIImage(named:"Checkmark"), for: .normal)
+        cell.buttonCheckBox.setImage(UIImage(named:"Checkmarkempty"), for: .selected)
         return cell
     }
-    
-    
     
 }

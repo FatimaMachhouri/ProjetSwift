@@ -706,6 +706,7 @@
                                                     <rect key="frame" x="5" y="11.5" width="120" height="36.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="2ov-qG-kDd"/>
+                                                        <constraint firstAttribute="height" constant="36.5" id="IxW-HS-f1k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -719,6 +720,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="yXo-oW-T7h" id="2h4-Mi-Jco"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhA-iE-MCx">
                                                     <rect key="frame" x="287" y="19.5" width="11" height="21"/>
@@ -845,6 +849,7 @@
                     </view>
                     <connections>
                         <outlet property="expenseName" destination="Ltg-RR-uRg" id="18e-nT-azP"/>
+                        <outlet property="expenseTotal" destination="VKe-m5-zT0" id="7RK-ZF-1U4"/>
                         <outlet property="tableView" destination="CsG-So-nYb" id="IXk-ze-D5B"/>
                     </connections>
                 </viewController>
