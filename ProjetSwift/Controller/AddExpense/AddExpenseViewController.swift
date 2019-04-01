@@ -22,6 +22,18 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //here or in the AddExpenseTableViewController ??????
+    @IBAction func checkMarkTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }) { (success) in
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+                sender.isSelected = !sender.isSelected
+                sender.transform = .identity
+            }, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
