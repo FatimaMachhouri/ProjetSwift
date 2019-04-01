@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="expenseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="expenseName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="expensePicture" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="expense_pay" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pay" inverseName="pay_expense" inverseEntity="Pay" syncable="YES"/>
+        <relationship name="expense_pay" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Pay" inverseName="pay_expense" inverseEntity="Pay" syncable="YES"/>
         <relationship name="expense_travel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Travel" inverseName="travel_expenses" inverseEntity="Travel" syncable="YES"/>
     </entity>
     <entity name="Participate" representedClassName="Participate" syncable="YES" codeGenerationType="class">

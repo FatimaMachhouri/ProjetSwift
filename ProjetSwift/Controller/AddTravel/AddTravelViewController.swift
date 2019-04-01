@@ -96,18 +96,16 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
                 self.newTravel = Travel(name: travelNameLabel.text ?? " - ", pic: travelPic?.pngData() ?? Data())
         
                 for pName in persons {
-                    if let persons = PersonDAO.search(forName: pName) {
-                        var person: Person
-                        if persons.count > 0 {
-                            person = persons[0]
-                        }
-                        else {
-                            person = Person(name: pName)
-                        }
-                        let participate: Participate = Participate(dateS: Date.init())
-                        person.addToPerson_participate(participate)
-                        self.newTravel?.addToTravel_participate(participate)
+                    var newPerson: Person
+                    if let person = PersonDAO.search(forName: pName) {
+                        newPerson = person
                     }
+                    else {
+                        newPerson = Person(name: pName)
+                    }
+                    let participate: Participate = Participate(dateS: Date.init())
+                    newPerson.addToPerson_participate(participate)
+                    self.newTravel?.addToTravel_participate(participate)
                 }
             }
             else {

@@ -44,6 +44,7 @@
 		3BA123C7224E3B3100D594D9 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */; };
 		3BA123CB224E3D3300D594D9 /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */; };
 		3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */; };
+		BD8174A2225230240078277F /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8174A1225230240078277F /* Pay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		3BA123C6224E3B3100D594D9 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 		3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
 		3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		BD8174A1225230240078277F /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				162BD507224E194D00ACE546 /* Participate.swift */,
 				162BD509224E198200ACE546 /* Person.swift */,
 				168C2D41224FA39200BA383D /* Expense.swift */,
+				BD8174A1225230240078277F /* Pay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 				168E43B4225048FD009D356B /* AddExpenseTableViewCell.swift in Sources */,
 				168C2D44224FA99800BA383D /* ExpenseDAO.swift in Sources */,
+				BD8174A2225230240078277F /* Pay.swift in Sources */,
 				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
 				1638953822519181000ECAC6 /* AddExpenseTableViewController.swift in Sources */,
 				163328EC224FD567001DF002 /* DetailExpenseTableViewCell.swift in Sources */,

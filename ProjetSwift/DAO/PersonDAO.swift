@@ -40,11 +40,17 @@ class PersonDAO {
         return result
     }
     
-    static func search(forName name: String) -> [Person]? {
+    static func search(forName name: String) -> Person? {
         self.request.predicate = NSPredicate(format: "personName == %@", name)
         do {
             let persons = try CoreDataManager.context.fetch(request) as [Person]?
-            return persons
+            if persons?.count == 0 {
+                return nil
+            }
+            else if persons?.count == 1{
+                return persons![0]
+            }
+            else { return nil }
         }
         catch {
             return nil

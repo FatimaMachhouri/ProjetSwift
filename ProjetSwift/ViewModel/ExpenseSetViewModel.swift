@@ -13,6 +13,7 @@ import CoreData
 protocol ExpenseSetViewModelDelegate {
     func dataSetChanged()
     func expenseAdded(at indexPath: IndexPath)
+    func expenseDeleted(at indexPath: IndexPath)
 }
 
 class ExpenseSetViewModel {
@@ -43,6 +44,14 @@ class ExpenseSetViewModel {
     public func get(expenseAt index: Int) -> Expense? {
         guard (index >= 0 ) && (index < self.count) else { return nil }
         return self.dataset[index]
+    }
+    
+    public func delete(expenseAt index: Int) {
+        let expense = self.dataset[index]
+        self.dataset.remove(at: index)
+        delegate?.expenseDeleted(at: IndexPath(row: index, section: 0))
+        CoreDataManager.context.delete(expense)
+        _ = CoreDataManager.save()
     }
     
 }

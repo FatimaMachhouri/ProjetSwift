@@ -13,6 +13,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var expenseName: UITextField!
+    @IBOutlet weak var expenseTotal: UILabel!
     
     var tableViewController: AddExpenseTableViewController!
     var newExpense: Expense? = nil
@@ -22,7 +23,6 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    //here or in the AddExpenseTableViewController ??????
     @IBAction func checkMarkTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -47,6 +47,10 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    func isCellConcerned(cell: AddExpenseTableViewCell?) -> Bool {
+        return cell?.buttonCheckBox.state == .normal
+    }
+    
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -59,6 +63,19 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        var total: Float = 0
+        for c in self.tableView.visibleCells {
+            let cell = c as? AddExpenseTableViewCell
+            if !self.isCellConcerned(cell: cell) {
+                continue
+            }
+            let amount = cell?.amountTextField.text ?? "0"
+            total += Float(amount) ?? 0
+        }
+        self.expenseTotal.text = String(total)
+    }
+    
     
     // Mark: segue
     
@@ -67,6 +84,18 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
             if let name = self.expenseName.text {
                 self.newExpense = Expense(name: name)
                 self.travel?.addToTravel_expenses(self.newExpense!)
+                for c in self.tableView.visibleCells {
+                    let cell = c as? AddExpenseTableViewCell
+                    if !self.isCellConcerned(cell: cell) { continue }
+                    var person: Person? = nil
+                    if let name = cell?.personNameLabel.text {
+                        person = PersonDAO.search(forName: name)
+                    }
+                    let amount = cell?.amountTextField.text ?? "0"
+                    let pay = Pay(pAmount: Float(amount) ?? 0)
+                    person?.addToPerson_pay(pay)
+                    pay.pay_expense = newExpense
+                }
             }
         }
     }
