@@ -11,12 +11,17 @@ import UIKit
 class PersonDetailViewController: UIViewController {
     @IBOutlet weak var paymentTableView: UITableView!
     var  personExpenseTableViewController: PersonExpenseTableViewController!
+    var person: Person? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView)
+        guard let p = person else {
+            fatalError("Unusual error")
+        }
+        self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p)
     }
     
 

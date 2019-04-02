@@ -10,9 +10,11 @@ import UIKit
 
 class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
     var tableView: UITableView
+    var personExpenses: PersonExpenseSetViewModel
     
-    init(tableView: UITableView) {
+    init(tableView: UITableView, person: Person) {
         self.tableView = tableView
+        self.personExpenses = PersonExpenseSetViewModel(person: person)
         super.init()
         self.tableView.dataSource = self
     }
