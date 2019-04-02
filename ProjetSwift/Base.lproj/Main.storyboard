@@ -227,6 +227,45 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-Y8-AIY">
                                 <rect key="frame" x="10" y="411" width="1004" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyPaymentCell" id="smq-J8-Ezu">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="smq-J8-Ezu" id="fVJ-3f-BrZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bo3-6R-6js">
+                                                    <rect key="frame" x="25" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-LB-W8W">
+                                                    <rect key="frame" x="319" y="11.5" width="11" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHq-Rk-7Ok">
+                                                    <rect key="frame" x="275" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3w2-LB-W8W" secondAttribute="trailing" constant="10" id="3sf-wf-yha"/>
+                                                <constraint firstItem="Bo3-6R-6js" firstAttribute="centerY" secondItem="fVJ-3f-BrZ" secondAttribute="centerY" id="4z1-LK-zpd"/>
+                                                <constraint firstItem="Bo3-6R-6js" firstAttribute="leading" secondItem="fVJ-3f-BrZ" secondAttribute="leadingMargin" constant="10" id="MLs-Kh-8MX"/>
+                                                <constraint firstItem="3w2-LB-W8W" firstAttribute="leading" secondItem="eHq-Rk-7Ok" secondAttribute="trailing" constant="2" id="gIr-cl-WQY"/>
+                                                <constraint firstItem="eHq-Rk-7Ok" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bo3-6R-6js" secondAttribute="trailing" constant="50" id="mEB-uM-FDf"/>
+                                                <constraint firstItem="eHq-Rk-7Ok" firstAttribute="centerY" secondItem="fVJ-3f-BrZ" secondAttribute="centerY" id="nAw-Va-wbR"/>
+                                                <constraint firstItem="3w2-LB-W8W" firstAttribute="centerY" secondItem="fVJ-3f-BrZ" secondAttribute="centerY" id="o25-S5-Fu5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes dépenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhn-ux-Mt7">
                                 <rect key="frame" x="10" y="380" width="761" height="21"/>
