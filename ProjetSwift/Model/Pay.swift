@@ -13,9 +13,19 @@ extension Pay {
         return self.amount
     }
     
+    public var cAmount: Float {
+        return self.amountConcerned
+    }
+    
     convenience init(pAmount: Float) {
         self.init(context: CoreDataManager.context)
         self.amount = pAmount
+    }
+    
+    convenience init(pAmount: Float, cAmount: Float) {
+        self.init(context: CoreDataManager.context)
+        self.amount = pAmount
+        self.amountConcerned = cAmount
     }
     
 }

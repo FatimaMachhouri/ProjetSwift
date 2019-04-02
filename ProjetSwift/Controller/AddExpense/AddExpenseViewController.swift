@@ -14,12 +14,30 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var expenseName: UITextField!
     @IBOutlet weak var expenseTotal: UILabel!
+    @IBOutlet weak var expenseDate: UITextField!
+    @IBOutlet weak var tableViewConcern: UITableView!
     
     var tableViewController: AddExpenseTableViewController!
+    var tableViewControllerConcern: AddExpenseTableViewController!
+    
     var newExpense: Expense? = nil
     var travel: Travel? = nil
     var expensePic: UIImage? = nil
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let t = travel else {
+            fatalError("Unusal error")
+        }
+        self.tableViewController = AddExpenseTableViewController(tableView: self.tableView, travel: t)
+        self.tableViewControllerConcern = AddExpenseTableViewController(tableView: self.tableViewConcern, travel: t)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     @IBAction func precedentAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -53,19 +71,6 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
         picker.dismiss(animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        guard let t = travel else {
-            fatalError("Unusal error")
-        }
-        self.tableViewController = AddExpenseTableViewController(tableView: self.tableView, travel: t)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func isCellConcerned(cell: AddExpenseTableViewCell?) -> Bool {
         return cell?.buttonCheckBox.state == .normal
     }
@@ -95,14 +100,66 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.expenseTotal.text = String(total)
     }
     
+    func textFieldContent(tableView: UITableView) -> [Person: Float?] {
+        var result: [Person: Float?] = [:]
+        for c in tableView.visibleCells {
+            let cell = c as? AddExpenseTableViewCell
+            if !self.isCellConcerned(cell: cell) { continue }
+            var person: Person? = nil
+            if let name = cell?.personNameLabel.text {
+                person = PersonDAO.search(forName: name)
+            }
+            let amount = cell?.amountTextField.text ?? "0"
+            result[person!] = Float(amount) ?? 0
+        }
+        return result
+    }
     
-    // Mark: segue
+    func merge(map1: [Person: Float?], map2: [Person: Float?]) -> [Person: [Float?]] {
+        var result: [Person: [Float?]] = [:]
+        for person in map1 {
+            var amounts: [Float?] = [0,0]
+            amounts[0] = person.value
+            amounts[1] = map2[person.key] ?? 0
+            result[person.key] = amounts
+        }
+        return result
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okNewExpenseSegue" {
             if let name = self.expenseName.text {
-                self.newExpense = Expense(name: name, pic: expensePic?.pngData() ?? Data())
+                let format = DateFormatter()
+                format.dateFormat = "dd/MM/yyyy"
+                let d: Date = format.date(from: self.expenseDate.text!) ?? Date.init()
+                self.newExpense = Expense(name: name, date: d, pic: expensePic?.pngData() ?? Data())
                 self.travel?.addToTravel_expenses(self.newExpense!)
+                
+                let amountPaid: [Person: Float?] = self.textFieldContent(tableView: tableView)
+                let amountConcerned: [Person: Float?] = self.textFieldContent(tableView: tableViewConcern)
+                let resultToInsert: [Person: [Float?]] = merge(map1: amountPaid, map2: amountConcerned)
+                
+                for person in resultToInsert {
+                    let pay = Pay(pAmount: person.value[0] ?? 0, cAmount: person.value[1] ?? 0)
+                    person.key.addToPerson_pay(pay)
+                    pay.pay_expense = newExpense
+                }
+            }
+        }
+    }
+ 
+    // Mark: segue
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "okNewExpenseSegue" {
+            if let name = self.expenseName.text {
+                let format = DateFormatter()
+                format.dateFormat = "dd/MM/yyyy"
+                let d: Date = format.date(from: self.expenseDate.text!) ?? Date.init()
+                self.newExpense = Expense(name: name, date: d, pic: expensePic?.pngData() ?? Data())
+                self.travel?.addToTravel_expenses(self.newExpense!)
+     
                 for c in self.tableView.visibleCells {
                     let cell = c as? AddExpenseTableViewCell
                     if !self.isCellConcerned(cell: cell) { continue }
@@ -118,4 +175,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
             }
         }
     }
+ */
+ 
+     
 }

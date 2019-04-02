@@ -13,6 +13,7 @@ class ExpenseDetailViewController: UIViewController {
     @IBOutlet weak var expensePicture: UIImageView!
     @IBOutlet weak var expenseNameLabel: UILabel!
     @IBOutlet weak var expenseAmountLabel: UILabel!
+    @IBOutlet weak var expenseDateLabel: UILabel!
     
     var expense: Expense? = nil
     var tableViewController: ExpenseDetailTableViewController!
@@ -23,6 +24,11 @@ class ExpenseDetailViewController: UIViewController {
             self.expenseNameLabel.text = anExpense.expenseName
             self.expenseAmountLabel.text = anExpense.amount.description
             self.expensePicture.image = UIImage(data: anExpense.expensePicture ?? Data())
+            
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+            self.expenseDateLabel.text = dateFormatterPrint.string(from: anExpense.expenseDate ?? Date.init())
+            
             guard let e = expense else {
                 fatalError("Unusual error")
             }
