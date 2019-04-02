@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     @IBAction func unwindAfterTravelUpdate(_ unwindSegue: UIStoryboardSegue) {
         if let updateTravelController = unwindSegue.source as? UpdateTravelViewController {
             if let travel = updateTravelController.newTravel {
-                print("hahahahahha")
                 travel.update(name: updateTravelController.travelName.text!, pic: updateTravelController.travelPic?.pngData() ?? Data())
             }
         }
@@ -43,7 +42,6 @@ class ViewController: UIViewController {
                     return
                 }
                 destController.travel = self.tableViewController.travels.get(travelAt: indexPath.row)
-                //print(self.tableViewController.travels.get(travelAt: indexPath.row))
             }
         }
         if let destController = segue.destination as? UpdateTravelViewController {

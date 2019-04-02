@@ -56,7 +56,6 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editButton = UITableViewRowAction(style: .normal, title: "Edit", handler: ({ (rowAction, indexPath) in
             self.viewController.performSegue(withIdentifier: "updateTravelSegue", sender: self.tableView.cellForRow(at: indexPath))
-            print("edit")
         }))
         editButton.backgroundColor = UIColor.orange
         let deleteButton = UITableViewRowAction(style: .normal, title: "Delete", handler: ({ (rowAction, indexPath) in
