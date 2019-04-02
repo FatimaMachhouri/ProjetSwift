@@ -9,11 +9,14 @@
 import UIKit
 
 class PersonDetailViewController: UIViewController {
-
+    @IBOutlet weak var paymentTableView: UITableView!
+    var  personExpenseTableViewController: PersonExpenseTableViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView)
     }
     
 
