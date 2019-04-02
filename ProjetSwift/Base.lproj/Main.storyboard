@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="2560.8000000000002" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Detail View Controller-->
         <scene sceneID="rtH-DW-Nf4">
             <objects>
-                <viewController id="BCZ-Fk-cNq" sceneMemberID="viewController">
+                <viewController id="BCZ-Fk-cNq" customClass="PersonDetailViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDU-6I-OPP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
