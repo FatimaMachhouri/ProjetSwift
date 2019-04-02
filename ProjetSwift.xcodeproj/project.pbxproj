@@ -49,6 +49,7 @@
 		BD2771622253E6E400AC37D0 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2771612253E6E400AC37D0 /* PersonDetailViewController.swift */; };
 		BD2771642253E74500AC37D0 /* PersonExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2771632253E74500AC37D0 /* PersonExpenseTableViewController.swift */; };
 		BD2771682253EAB500AC37D0 /* PersonExpenseSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2771672253EAB500AC37D0 /* PersonExpenseSetViewModel.swift */; };
+		BD27716A2253FDDF00AC37D0 /* PersonExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2771692253FDDF00AC37D0 /* PersonExpenseTableViewCell.swift */; };
 		BD8174A2225230240078277F /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8174A1225230240078277F /* Pay.swift */; };
 		BDEB52732253817E00F52FB9 /* UpdateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB52722253817E00F52FB9 /* UpdateTravelViewController.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		BD2771612253E6E400AC37D0 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		BD2771632253E74500AC37D0 /* PersonExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonExpenseTableViewController.swift; sourceTree = "<group>"; };
 		BD2771672253EAB500AC37D0 /* PersonExpenseSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonExpenseSetViewModel.swift; sourceTree = "<group>"; };
+		BD2771692253FDDF00AC37D0 /* PersonExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		BD8174A1225230240078277F /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
 		BDEB52722253817E00F52FB9 /* UpdateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTravelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				163328EB224FD567001DF002 /* DetailExpenseTableViewCell.swift */,
 				168E43B3225048FD009D356B /* AddExpenseTableViewCell.swift */,
 				16189414225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift */,
+				BD2771692253FDDF00AC37D0 /* PersonExpenseTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				168C2D42224FA39200BA383D /* Expense.swift in Sources */,
 				16C4682C2244DB4600494E57 /* ViewController.swift in Sources */,
 				162BD50A224E198200ACE546 /* Person.swift in Sources */,
+				BD27716A2253FDDF00AC37D0 /* PersonExpenseTableViewCell.swift in Sources */,
 				3BA123C7224E3B3100D594D9 /* PersonTableViewController.swift in Sources */,
 				168C2D4A224FB32D00BA383D /* ExpenseTableViewController.swift in Sources */,
 				3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */,

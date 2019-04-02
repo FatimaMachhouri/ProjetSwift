@@ -228,7 +228,7 @@
                                 <rect key="frame" x="10" y="411" width="1004" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyPaymentCell" id="smq-J8-Ezu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyPaymentCell" id="smq-J8-Ezu" customClass="PersonExpenseTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="smq-J8-Ezu" id="fVJ-3f-BrZ">
@@ -264,6 +264,10 @@
                                                 <constraint firstItem="3w2-LB-W8W" firstAttribute="centerY" secondItem="fVJ-3f-BrZ" secondAttribute="centerY" id="o25-S5-Fu5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="expenseAmountLabel" destination="eHq-Rk-7Ok" id="hLp-uE-Mei"/>
+                                            <outlet property="expenseNameLabel" destination="Bo3-6R-6js" id="BMx-Xr-xuB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
