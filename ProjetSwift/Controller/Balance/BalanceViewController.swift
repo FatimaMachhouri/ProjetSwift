@@ -48,6 +48,7 @@ class BalanceViewController: UIViewController {
         
         if let destController = segue.destination as? ExpenseViewController {
             destController.travel = self.travel
+            destController.balanceViewController = self
         }
     }
     

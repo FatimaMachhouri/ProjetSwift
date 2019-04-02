@@ -13,6 +13,7 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var tableViewController: ExpenseTableViewController!
     var travel: Travel? = nil
+    var balanceViewController: BalanceViewController? = nil
     
     override func viewDidLoad() {        
         super.viewDidLoad()
@@ -21,6 +22,14 @@ class ExpenseViewController: UIViewController {
             fatalError("Unusual error")
         }
         self.tableViewController = ExpenseTableViewController(tableView: tableView, travel: t)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // TODO: Come up with a better way to do this
+        // this updates table view of balance
+        self.balanceViewController?.tableView.beginUpdates()
+        self.balanceViewController?.tableView.reloadData()
+        self.balanceViewController?.tableView.endUpdates()
     }
     
     override func didReceiveMemoryWarning() {
