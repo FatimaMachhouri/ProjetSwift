@@ -97,6 +97,7 @@
                     <navigationItem key="navigationItem" id="oZd-Ls-3EN"/>
                     <connections>
                         <outlet property="tableView" destination="8qu-JV-UvV" id="cuE-Xp-g0s"/>
+                        <segue destination="8Me-v3-8qz" kind="showDetail" identifier="updateTravelSegue" id="req-WC-XS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -995,9 +996,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="8Me-v3-8qz" id="T8F-83-aBQ"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personnes :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwf-YB-NMf">
                                 <rect key="frame" x="33" y="215.5" width="90" height="21"/>
@@ -1018,25 +1016,16 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="8Me-v3-8qz" id="guu-a1-nfc"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYi-II-O0N">
                                 <rect key="frame" x="315" y="211" width="30" height="30"/>
                                 <state key="normal" title="+"/>
-                                <connections>
-                                    <action selector="addPersonAction:" destination="8Me-v3-8qz" eventType="touchUpInside" id="4LS-zt-c8r"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allemagne" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-65-QZ5">
                                 <rect key="frame" x="143" y="101" width="89" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="8Me-v3-8qz" id="Hi3-FI-a15"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-H0-aOi">
                                 <rect key="frame" x="77" y="104.5" width="46" height="21"/>
@@ -1047,25 +1036,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2q-mo-28f">
                                 <rect key="frame" x="143" y="151" width="81" height="30"/>
                                 <state key="normal" title="Télécharger"/>
-                                <connections>
-                                    <action selector="loadPhotoAction:" destination="8Me-v3-8qz" eventType="touchUpInside" id="lFC-X6-qGg"/>
-                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-c6-oNj">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="itk-7S-RLg"/>
-                                    <barButtonItem title="Précédent" id="rEh-fO-073">
-                                        <connections>
-                                            <action selector="precedentAction:" destination="8Me-v3-8qz" id="Xcl-jJ-eLK"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Précédent" id="rEh-fO-073"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hGo-L0-AcL"/>
-                                    <barButtonItem title="Enregistrer" id="8Iu-IP-SH9">
-                                        <connections>
-                                            <segue destination="TOJ-mh-OjB" kind="unwind" identifier="okNewTravelSegue" unwindAction="unwindAfterNewTravelCreatedWithSegue:" id="NuC-T2-O4x"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Enregistrer" id="8Iu-IP-SH9"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OIT-l4-x3v"/>
                                 </items>
                             </toolbar>
@@ -1104,14 +1082,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PJs-7b-pDn"/>
                     </view>
-                    <connections>
-                        <outlet property="personNameLabel" destination="CWo-Hn-vLe" id="3kn-W2-uVL"/>
-                        <outlet property="personTableView" destination="0c5-Bl-iqI" id="XrR-CW-dfV"/>
-                        <outlet property="travelNameLabel" destination="s5n-65-QZ5" id="bkv-bp-9xM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JH4-7z-N55" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="TOJ-mh-OjB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1350" y="941"/>
         </scene>

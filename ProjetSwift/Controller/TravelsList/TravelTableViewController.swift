@@ -19,11 +19,13 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
     var tableView: UITableView
     var travels: TravelSetViewModel
     let fetchResultController: TravelFetchResultController
+    var viewController: UIViewController
     
-    init(tableView: UITableView) {
+    init(tableView: UITableView, viewController: UIViewController) {
         self.tableView = tableView
         self.fetchResultController = TravelFetchResultController(view: tableView)
         self.travels = TravelSetViewModel(data: self.fetchResultController.travelsFetched)
+        self.viewController = viewController
         super.init()
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -53,6 +55,7 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editButton = UITableViewRowAction(style: .normal, title: "Edit", handler: ({ (rowAction, indexPath) in
+            self.viewController.performSegue(withIdentifier: "updateTravelSegue", sender: self)
             print("edit")
         }))
         editButton.backgroundColor = UIColor.orange

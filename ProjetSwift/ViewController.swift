@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tableViewController = TravelTableViewController(tableView: tableView)
+        self.tableViewController = TravelTableViewController(tableView: tableView, viewController: self)
     }
     
     @IBAction func unwindAfterNewTravelCreated(segue: UIStoryboardSegue) {
