@@ -45,6 +45,7 @@
 		3BA123CB224E3D3300D594D9 /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */; };
 		3BA123CF224E51F800D594D9 /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */; };
 		BD8174A2225230240078277F /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8174A1225230240078277F /* Pay.swift */; };
+		BDEB52732253817E00F52FB9 /* UpdateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB52722253817E00F52FB9 /* UpdateTravelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		3BA123CA224E3D3300D594D9 /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
 		3BA123CE224E51F800D594D9 /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		BD8174A1225230240078277F /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
+		BDEB52722253817E00F52FB9 /* UpdateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTravelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 		16C4685A2244FE6700494E57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BDEB5271225380B500F52FB9 /* UpdateTravel */,
 				16E5CE4122503E85002D01DF /* AddExpense */,
 				1663AB96225002A200446577 /* AddPerson */,
 				1663AB952250029500446577 /* AddTravel */,
@@ -312,6 +315,14 @@
 				1638953722519181000ECAC6 /* AddExpenseTableViewController.swift */,
 			);
 			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		BDEB5271225380B500F52FB9 /* UpdateTravel */ = {
+			isa = PBXGroup;
+			children = (
+				BDEB52722253817E00F52FB9 /* UpdateTravelViewController.swift */,
+			);
+			path = UpdateTravel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +488,7 @@
 				1667DF54224FBBDF00D404C2 /* ExpenseViewController.swift in Sources */,
 				169FCE502246755F00B03B12 /* AddPersonViewController.swift in Sources */,
 				1663AB9A2250096900446577 /* PersonsExpenseSetViewModel.swift in Sources */,
+				BDEB52732253817E00F52FB9 /* UpdateTravelViewController.swift in Sources */,
 				16C13224224A28C6001C8812 /* TravelFetchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

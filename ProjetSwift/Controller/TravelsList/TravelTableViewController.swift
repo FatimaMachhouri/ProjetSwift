@@ -15,7 +15,7 @@ extension UIImageView {
 
 import UIKit
 
-class TravelTableViewController: NSObject, UITableViewDataSource {
+class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView
     var travels: TravelSetViewModel
     let fetchResultController: TravelFetchResultController
@@ -26,6 +26,7 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         self.travels = TravelSetViewModel(data: self.fetchResultController.travelsFetched)
         super.init()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.travels.delegate = self
     }
     
@@ -39,14 +40,27 @@ class TravelTableViewController: NSObject, UITableViewDataSource {
         return configure(cell: cell, atIndexPath: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    // Old way of doing deleting
+    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
             self.travels.delete(travelAt: indexPath.row)
         }
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editButton = UITableViewRowAction(style: .normal, title: "Edit", handler: ({ (rowAction, indexPath) in
+            print("edit")
+        }))
+        editButton.backgroundColor = UIColor.orange
+        let deleteButton = UITableViewRowAction(style: .normal, title: "Delete", handler: ({ (rowAction, indexPath) in
+            self.travels.delete(travelAt: indexPath.row)
+        }))
+        deleteButton.backgroundColor = UIColor.red
+        return [deleteButton, editButton]
     }
  
     private func configure(cell: UITableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
