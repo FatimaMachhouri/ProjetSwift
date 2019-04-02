@@ -22,4 +22,9 @@ extension Travel {
         self.travelName = name
         self.picture = pic
     }
+    
+    func update(name: String, pic: Data) {
+        self.travelName = name
+        self.picture = pic
+    }
 }

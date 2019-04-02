@@ -27,6 +27,15 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindAfterTravelUpdate(_ unwindSegue: UIStoryboardSegue) {
+        if let updateTravelController = unwindSegue.source as? UpdateTravelViewController {
+            if let travel = updateTravelController.newTravel {
+                print("hahahahahha")
+                travel.update(name: updateTravelController.travelName.text!, pic: updateTravelController.travelPic?.pngData() ?? Data())
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destController = segue.destination as? BalanceViewController {
             if let cell = sender as? TravelTableViewCell {
@@ -35,6 +44,14 @@ class ViewController: UIViewController {
                 }
                 destController.travel = self.tableViewController.travels.get(travelAt: indexPath.row)
                 //print(self.tableViewController.travels.get(travelAt: indexPath.row))
+            }
+        }
+        if let destController = segue.destination as? UpdateTravelViewController {
+            if let cell = sender as? TravelTableViewCell {
+                guard let indexPath = self.tableView.indexPath(for: cell) else {
+                    return
+                }
+                destController.newTravel = self.tableViewController.travels.get(travelAt: indexPath.row)
             }
         }
     }
