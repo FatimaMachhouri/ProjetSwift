@@ -49,7 +49,7 @@ class ExpenseDAO {
                 result?[expense.name] = payement?.amount
             }
         }
-        return nil
+        return result
     }
     
     static func search(forExpense expense: Expense) -> [Person: Float]? {
