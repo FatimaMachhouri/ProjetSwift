@@ -34,7 +34,6 @@ class PersonDAO {
         for participate in participates {
             if let person = (participate as! Participate).participate_person {
                 result?.append(person)
-                print(person)
             }
         }
         return result
