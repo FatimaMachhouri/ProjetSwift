@@ -20,11 +20,24 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.personExpenses.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idMyPaymentCell", for: indexPath) as! PersonExpenseTableViewCell
+        return configure(cell: cell, atIndexPath: indexPath)
+    }
+    
+    func configure(cell: PersonExpenseTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell {
+        guard let personExpense = self.personExpenses.get(expense_at: indexPath.row) else {
+            fatalError("unusual error")
+        }
+        for (name, amount) in personExpense {
+            cell.expenseNameLabel.text = name
+            cell.expenseAmountLabel.text = amount.description
+        }
+        return cell
     }
     
 
