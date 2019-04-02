@@ -88,6 +88,24 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        let oldTotal = self.expenseTotal.text
+        let newTotal = getNewTotal()
+        self.expenseTotal.text = newTotal
+        if oldTotal != newTotal {
+            updateConcern(total: Float(newTotal) ?? 0)
+        }
+    }
+    
+    func updateConcern(total: Float) {
+        let nbPerson = self.tableView.visibleCells.count
+        let average = total/Float(nbPerson)
+        for c in self.tableViewConcern.visibleCells {
+            let cell = c as? AddExpenseTableViewCell
+            cell?.amountTextField.text = String(average)
+        }
+    }
+    
+    func getNewTotal() -> String {
         var total: Float = 0
         for c in self.tableView.visibleCells {
             let cell = c as? AddExpenseTableViewCell
@@ -97,7 +115,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
             let amount = cell?.amountTextField.text ?? "0"
             total += Float(amount) ?? 0
         }
-        self.expenseTotal.text = String(total)
+        return String(total)
     }
     
     func textFieldContent(tableView: UITableView) -> [Person: Float?] {
