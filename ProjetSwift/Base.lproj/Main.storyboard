@@ -304,6 +304,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hCj-14-bWi"/>
                     </view>
+                    <connections>
+                        <outlet property="paymentTableView" destination="zrU-Y8-AIY" id="x3h-HK-rFU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tf3-Vt-ZXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
