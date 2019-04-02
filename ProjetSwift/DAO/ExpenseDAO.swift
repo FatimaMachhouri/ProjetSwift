@@ -38,6 +38,20 @@ class ExpenseDAO {
         return result
     }
     
+    static func search(forPerson person: Person) -> [String:Float]? {
+        guard let payments = person.person_pay else {
+            return nil
+        }
+        var result: [String:Float]? = [:]
+        for p in payments {
+            let payement = p as? Pay
+            if let expense = payement?.pay_expense {
+                result?[expense.name] = payement?.amount
+            }
+        }
+        return nil
+    }
+    
     static func search(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]
         
