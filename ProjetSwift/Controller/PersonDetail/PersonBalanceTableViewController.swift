@@ -52,7 +52,7 @@ class PersonBalanceTableViewController: NSObject, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let reimburseButton = UITableViewRowAction(style: .normal, title: "Reimburse", handler: ({ (rowAction, indexPath) in
-            print("reiburse")
+            self.personBalanceSheet.reimburse(person_at: indexPath.row)
         }))
         reimburseButton.backgroundColor = UIColor.green
         return [reimburseButton]

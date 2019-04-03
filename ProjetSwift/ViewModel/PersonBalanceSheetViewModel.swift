@@ -10,8 +10,12 @@ import Foundation
 
 class PersonBalanceSheetViewModel {
     var exchange: [(String, Float)] = []
+    var person: Person
+    var travel: Travel
     
     init(person: Person, travel: Travel) {
+        self.person = person
+        self.travel = travel
         guard let balances = PersonDAO.getBalanceSheets(forTravel: travel) else {
             return
         }
@@ -79,5 +83,29 @@ class PersonBalanceSheetViewModel {
     public func get(exchange_at index: Int) -> (String, Float)? {
         guard (index >= 0 ) && (index < self.count) else { return nil }
         return self.exchange[index]
+    }
+    
+    public func reimburse(person_at index: Int) {
+        guard let otherPerson = PersonDAO.search(forName: self.exchange[index].0) else {
+            return
+        }
+        let amount = self.exchange[index].1
+        if amount > 0 {
+            self.reimburse(person_paying: otherPerson, person_receiving: self.person, amount: amount)
+        }
+        else if amount < 0 {
+            self.reimburse(person_paying: self.person, person_receiving: otherPerson, amount: -amount)
+        }
+    }
+    
+    fileprivate func reimburse(person_paying: Person, person_receiving: Person, amount: Float) {
+        let expense = Expense(name: "reimbursement of \(person_paying.name) to \(person_receiving.name)")
+        let payment = Pay(pAmount: amount, cAmount: 0)
+        let receive = Pay(pAmount: 0, cAmount: amount)
+        person_receiving.addToPerson_pay(receive)
+        person_paying.addToPerson_pay(payment)
+        expense.addToExpense_pay(payment)
+        expense.addToExpense_pay(receive)
+        self.travel.addToTravel_expenses(expense)
     }
 }
