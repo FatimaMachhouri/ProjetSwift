@@ -119,7 +119,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
         var result: [Person: [Float?]] = [:]
         var map: [Person: Float?] = [:]
         
-        //on récupère la map la plus longue pour itérer dessus ensuite
+        //get the longest map to iterate on
         if map1.count > map2.count {
             map = map1
         }
@@ -136,6 +136,35 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
         return result
     }
     
+    //return the sum of the TextFields of an UITableView
+    private func totalTableView(tableView: UITableView) -> Float {
+        let countTableView = tableView.numberOfSections
+        var somme: Float = 0
+        
+        for section in 0 ..< countTableView {
+            let rowCount = tableView.numberOfRows(inSection: section)
+            for row in 0 ..< rowCount {
+                let cell = tableView.cellForRow(at: NSIndexPath(row: row, section: section) as IndexPath) as? AddExpenseTableViewCell
+                let amount = Float(cell?.amountTextField.text ?? "0") ?? 0
+                somme = somme + amount
+            }
+        }
+        return somme
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let alertAmounts = UIAlertController(title: "Erreur", message:"Impossible d'ajouter. Les montants payés et concernés ne sont pas égaux.", preferredStyle: .alert)
+        alertAmounts.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+        
+        if (identifier == "okNewExpenseSegue") {
+            guard self.totalTableView(tableView: tableView) == self.totalTableView(tableView: tableViewConcern) else {
+                self.present(alertAmounts, animated: true){}
+                return false
+            }
+        }
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okNewExpenseSegue" {
             if let name = self.expenseName.text {
@@ -144,7 +173,6 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
                 let d: Date = format.date(from: self.expenseDate.text!) ?? Date.init()
                 self.newExpense = Expense(name: name, date: d, pic: expensePic?.pngData() ?? Data())
                 self.travel?.addToTravel_expenses(self.newExpense!)
-                
                 let amountPaid: [Person: Float?] = self.textFieldContent(tableView: tableView)
                 let amountConcerned: [Person: Float?] = self.textFieldContent(tableView: tableViewConcern)
                 let resultToInsert: [Person: [Float?]] = merge(map1: amountPaid, map2: amountConcerned)

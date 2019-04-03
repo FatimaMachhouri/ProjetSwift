@@ -53,4 +53,18 @@ extension Expense {
         }
     }
     
+    var amountConcern: Float {
+        get {
+            guard let expense_p = self.expense_pay else {
+                return 0
+            }
+            var amountConcern: Float = 0
+            for pay in expense_p {
+                let amount = (pay as! Pay).amountConcerned
+                amountConcern += amount
+            }
+            return amountConcern
+        }
+    }
+    
 }
