@@ -36,7 +36,12 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
             let startDate: Date  = format.date(from: self.stardDateTextField.text!) ?? Date.init()
             
             self.newParticipate = Participate(dateS: startDate)
-            self.newPerson = Person(name: personName)
+            if let person = PersonDAO.search(forName: personName) {
+                self.newPerson = person
+            }
+            else {
+                self.newPerson = Person(name: personName)
+            }
             self.travel?.addToTravel_participate(self.newParticipate!)
             newPerson?.addToPerson_participate(self.newParticipate!)
             
