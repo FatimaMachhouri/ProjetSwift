@@ -9,6 +9,7 @@ import UIKit
 
 class BalanceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationItem!
     
     var tableViewController: PersonTableViewController!
     var travel: Travel? = nil
@@ -20,6 +21,7 @@ class BalanceViewController: UIViewController {
         guard let t = travel else {
             fatalError("Unusual error")
         }
+        self.navBar.title = "Equilibre \(t.name)"
         self.tableViewController = PersonTableViewController(tableView: self.tableView, travel: t)
     }
     
