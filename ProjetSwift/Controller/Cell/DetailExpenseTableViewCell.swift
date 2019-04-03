@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailExpenseTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var personAmountLabel: UILabel!
     

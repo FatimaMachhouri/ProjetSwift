@@ -9,14 +9,15 @@
 import UIKit
 
 class ExpenseViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
+    
     var tableViewController: ExpenseTableViewController!
     var travel: Travel? = nil
     var balanceViewController: BalanceViewController? = nil
     
     override func viewDidLoad() {        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         guard let t = travel else {
             fatalError("Unusual error")
@@ -27,9 +28,7 @@ class ExpenseViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         // TODO: Come up with a better way to do this
         // this updates table view of balance
-        self.balanceViewController?.tableView.beginUpdates()
-        self.balanceViewController?.tableView.reloadData()
-        self.balanceViewController?.tableView.endUpdates()
+        self.balanceViewController?.tableViewController.dataSetChanged()
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,7 +47,6 @@ class ExpenseViewController: UIViewController {
         if let destController = segue.destination as? AddExpenseViewController {
             destController.travel = self.travel
         }
-
     }
     
     @IBAction func unwindToExpenseViewAfterCreatingExpense(_ unwindSegue: UIStoryboardSegue) {
@@ -58,5 +56,6 @@ class ExpenseViewController: UIViewController {
             }
         }
     }
+    
 }
 

@@ -11,15 +11,15 @@ import CoreData
 import UIKit
 
 class TravelFetchResultController: NSObject, NSFetchedResultsControllerDelegate {
-    
-    let tableView : UITableView
+    let tableView: UITableView
 
-    init(view : UITableView){
+    init(view: UITableView) {
         self.tableView = view
         super.init()
         do{
             try self.travelsFetched.performFetch()
-        } catch let error as NSError{ fatalError(error.description) }
+        }
+        catch let error as NSError { fatalError(error.description) }
     }
     
     lazy var travelsFetched : NSFetchedResultsController<Travel> = {
@@ -35,7 +35,7 @@ class TravelFetchResultController: NSObject, NSFetchedResultsControllerDelegate 
         self.tableView.beginUpdates()
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
         _ = CoreDataManager.save()
     }

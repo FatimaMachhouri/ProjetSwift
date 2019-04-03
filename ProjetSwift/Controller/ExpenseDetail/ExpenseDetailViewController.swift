@@ -8,7 +8,6 @@
 
 import UIKit
 class ExpenseDetailViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewConcern: UITableView!
     @IBOutlet weak var expensePicture: UIImageView!
@@ -30,11 +29,8 @@ class ExpenseDetailViewController: UIViewController {
             dateFormatterPrint.dateFormat = "dd/MM/yyyy"
             self.expenseDateLabel.text = dateFormatterPrint.string(from: anExpense.expenseDate ?? Date.init())
             
-            guard let e = expense else {
-                fatalError("Unusual error")
-            }
-            self.tableViewController = ExpenseDetailTableViewController(tableView: tableView, expense: e)
-            self.tableViewControllerConcern = ExpenseDetailConcernTableViewController(tableView: tableViewConcern, expense: e)
+            self.tableViewController = ExpenseDetailTableViewController(tableView: tableView, expense: anExpense)
+            self.tableViewControllerConcern = ExpenseDetailConcernTableViewController(tableView: tableViewConcern, expense: anExpense)
         }
         else {
             self.expenseNameLabel.text = ""

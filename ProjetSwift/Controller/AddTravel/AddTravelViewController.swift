@@ -13,6 +13,7 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
     @IBOutlet weak var travelNameLabel: UITextField!
     @IBOutlet weak var personNameLabel: UITextField!
     @IBOutlet weak var personTableView: UITableView!
+    
     var travelPic: UIImage? = nil
     var persons: [String] = []
     var newTravel: Travel? = nil
@@ -40,7 +41,6 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.personNameLabel.text = nil
         addPersonToTableView(at: IndexPath(row: self.persons.count-1, section: 0))
     }
-    
     
     @IBAction func precedentAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

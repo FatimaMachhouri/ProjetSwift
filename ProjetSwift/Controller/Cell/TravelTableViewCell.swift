@@ -9,7 +9,6 @@
 import UIKit
 
 class TravelTableViewCell: UITableViewCell {
-
     @IBOutlet weak var travelNameLabel: UILabel!
     @IBOutlet weak var imageViewer: UIImageView!
     

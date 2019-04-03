@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
+//  TravelViewController.swift
 //  ProjetSwift
 //
-//  Created by Fatima Machhouri on 22/03/2019.
+//  Created by Fatima Machhouri on 03/04/2019.
 //  Copyright © 2019 F&Y. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class TravelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
     var tableViewController: TravelTableViewController!
     
     override func viewDidLoad() {
@@ -20,13 +20,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindAfterNewTravelCreated(segue: UIStoryboardSegue) {
-
     }
     
     @IBAction func unwindAfterTravelUpdate(_ unwindSegue: UIStoryboardSegue) {
         if let updateTravelController = unwindSegue.source as? UpdateTravelViewController {
             if let travel = updateTravelController.newTravel {
-                travel.update(name: updateTravelController.travelName.text!, pic: updateTravelController.travelPic?.pngData() ?? Data())
+                if let travelName = updateTravelController.travelName.text {
+                    travel.update(name: travelName, pic: updateTravelController.travelPic?.pngData() ?? Data())
+                }
             }
         }
     }
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
                 destController.travel = self.tableViewController.travels.get(travelAt: indexPath.row)
             }
         }
-        if let destController = segue.destination as? UpdateTravelViewController {
+        else if let destController = segue.destination as? UpdateTravelViewController {
             if let cell = sender as? TravelTableViewCell {
                 guard let indexPath = self.tableView.indexPath(for: cell) else {
                     return
@@ -49,5 +50,5 @@ class ViewController: UIViewController {
             }
         }
     }
-}
 
+}

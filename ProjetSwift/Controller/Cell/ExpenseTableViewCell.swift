@@ -9,7 +9,6 @@
 import UIKit
 
 class ExpenseTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var expenseNameLabel: UILabel!
     @IBOutlet weak var expenseAmountLabel: UILabel!
     

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Travel View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TravelViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oZd-Ls-3EN"/>
                     <connections>
-                        <outlet property="tableView" destination="8qu-JV-UvV" id="cuE-Xp-g0s"/>
+                        <outlet property="tableView" destination="8qu-JV-UvV" id="fkI-9L-BiR"/>
                         <segue destination="8Me-v3-8qz" kind="showDetail" identifier="updateTravelSegue" id="req-WC-XS3"/>
                     </connections>
                 </viewController>

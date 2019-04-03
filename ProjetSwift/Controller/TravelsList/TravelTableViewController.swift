@@ -6,14 +6,14 @@
 //  Copyright © 2019 F&Y. All rights reserved.
 //
 
+import UIKit
+
 extension UIImageView {
     func setRounded() {
         self.layer.cornerRadius = (self.frame.width / 3)
         self.layer.masksToBounds = true
     }
 }
-
-import UIKit
 
 class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView
@@ -41,13 +41,6 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
         return configure(cell: cell, atIndexPath: indexPath)
     }
     
-    // Old way of doing deleting
-    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCell.EditingStyle.delete) {
-            self.travels.delete(travelAt: indexPath.row)
-        }
-    }*/
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -64,11 +57,11 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
         return [deleteButton, editButton]
     }
  
-    private func configure(cell: UITableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
+    private func configure(cell: TravelTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
         let travel = self.travels.get(travelAt: indexPath.row)
-        (cell as! TravelTableViewCell).travelNameLabel?.text = travel.travelName
-        (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
-        (cell as! TravelTableViewCell).imageViewer.setRounded()
+        cell.travelNameLabel?.text = travel.travelName
+        cell.imageViewer.image = UIImage(data: travel.pic)
+        cell.imageViewer.setRounded()
         return cell
     }
     

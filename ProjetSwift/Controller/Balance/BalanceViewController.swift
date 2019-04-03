@@ -9,6 +9,7 @@ import UIKit
 
 class BalanceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
     var tableViewController: PersonTableViewController!
     var travel: Travel? = nil
     
@@ -23,15 +24,7 @@ class BalanceViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func unwindAfterNewPersonCreated(segue: UIStoryboardSegue) {
         if let addPersonController = segue.source as? AddPersonViewController {

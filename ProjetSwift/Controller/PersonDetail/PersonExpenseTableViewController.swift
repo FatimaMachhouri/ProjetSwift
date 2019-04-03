@@ -31,7 +31,7 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
     
     func configure(cell: PersonExpenseTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         guard let personExpense = self.personExpenses.get(expense_at: indexPath.row) else {
-            fatalError("unusual error")
+            return cell
         }
         for (name, amount) in personExpense {
             cell.expenseNameLabel.text = name
@@ -39,6 +39,5 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
         }
         return cell
     }
-    
 
 }

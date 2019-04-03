@@ -9,7 +9,6 @@
 import UIKit
 
 class UpdateTravelViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     @IBOutlet weak var travelName: UITextField!
     
     var travelPic: UIImage? = nil
@@ -49,6 +48,5 @@ class UpdateTravelViewController: UIViewController, UITextFieldDelegate, UIImage
         textField.resignFirstResponder()
         return true
     }
-    
     
 }

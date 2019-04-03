@@ -9,7 +9,6 @@
 import UIKit
 
 class PersonBalanceTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var concernedPersonNameLabel: UILabel!

@@ -9,9 +9,8 @@
 import UIKit
 
 class AddPersonViewController: UIViewController, UITextFieldDelegate {
-    var newPerson: Person?
-    var newParticipate: Participate?
     var travel: Travel? = nil
+    var newPerson: Person? = nil
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var stardDateTextField: UITextField!
@@ -29,22 +28,23 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "okNewPersonSegue" {
-            let personName: String  = self.nameTextField.text!
+            guard let personName = self.nameTextField.text else {
+                return
+            }
 
             let format = DateFormatter()
             format.dateFormat = "dd/MM/yyyy"
             let startDate: Date  = format.date(from: self.stardDateTextField.text!) ?? Date.init()
             
-            self.newParticipate = Participate(dateS: startDate)
+            let newParticipate = Participate(dateS: startDate)
             if let person = PersonDAO.search(forName: personName) {
                 self.newPerson = person
             }
             else {
                 self.newPerson = Person(name: personName)
             }
-            self.travel?.addToTravel_participate(self.newParticipate!)
-            newPerson?.addToPerson_participate(self.newParticipate!)
-            
+            self.travel?.addToTravel_participate(newParticipate)
+            self.newPerson?.addToPerson_participate(newParticipate)
         }
     }
     
@@ -59,6 +59,5 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
-
 
 }

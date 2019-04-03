@@ -33,7 +33,7 @@ class PersonBalanceTableViewController: NSObject, UITableViewDataSource {
     
     func configure(cell: PersonBalanceTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         guard let balanceSheet = self.personBalanceSheet.get(exchange_at: indexPath.row) else {
-        fatalError("unusual error")
+            return cell
         }
         cell.personNameLabel.text = self.personName
         let amount = balanceSheet.1

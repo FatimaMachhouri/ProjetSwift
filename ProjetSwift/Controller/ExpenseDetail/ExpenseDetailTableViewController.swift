@@ -32,14 +32,13 @@ class ExpenseDetailTableViewController: NSObject, UITableViewDataSource {
     
     private func configure(cell: DetailExpenseTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
         let dataset = self.personsExpense.get(person_amount_at: indexPath.row)
-        let keys = self.personsExpense.get(person_amount_at: indexPath.row)?.keys
-        
-        for person in keys! {
-            let amount = dataset?[person]
-            cell.personNameLabel.text = person.personName
-            cell.personAmountLabel.text = amount?.description
+        if let keys = self.personsExpense.get(person_amount_at: indexPath.row)?.keys {
+            for person in keys {
+                let amount = dataset?[person]
+                cell.personNameLabel.text = person.personName
+                cell.personAmountLabel.text = amount?.description
+            }
         }
-
         return cell
     }
     
