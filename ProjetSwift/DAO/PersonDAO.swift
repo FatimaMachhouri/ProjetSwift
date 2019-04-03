@@ -31,8 +31,11 @@ class PersonDAO {
             return nil
         }
         var result: [Person]? = []
-        for participate in participates {
-            if let person = (participate as! Participate).participate_person {
+        for p in participates {
+            guard let participate = p as? Participate else {
+                continue
+            }
+            if let person = participate.participate_person {
                 result?.append(person)
             }
         }
@@ -47,7 +50,7 @@ class PersonDAO {
                 return nil
             }
             else if persons?.count == 1{
-                return persons![0]
+                return persons?[0]
             }
             else { return nil }
         }
@@ -56,16 +59,17 @@ class PersonDAO {
         }
     }
 
-    static func getBalance(forTravel travel: Travel, forPerson person: Person) -> Float? {
+    static func getBalanceSheet(forTravel travel: Travel, forPerson person: Person) -> Float? {
         var sommeExpense: Float = 0
-        if let allPayments = person.person_pay {
-            for p in allPayments {
-                let pay = p as? Pay
-                if pay?.pay_expense?.expense_travel == travel {
-                    if let amount = pay?.amount {
-                        if let amountConcerned = pay?.amountConcerned {
-                            sommeExpense = sommeExpense + (amount - amountConcerned)
-                        }
+        guard let allPayments = person.person_pay else {
+            return nil
+        }
+        for p in allPayments {
+            let pay = p as? Pay
+            if pay?.pay_expense?.expense_travel == travel {
+                if let amount = pay?.amount {
+                    if let amountConcerned = pay?.amountConcerned {
+                        sommeExpense = sommeExpense + (amount - amountConcerned)
                     }
                 }
             }
@@ -73,15 +77,16 @@ class PersonDAO {
         return sommeExpense
     }
     
-    static func getBalances(forTravel travel: Travel) -> [Person: Float]? {
+    static func getBalanceSheets(forTravel travel: Travel) -> [Person: Float]? {
         var result: [Person: Float]? = [:]
-        if let participates = travel.travel_participate {
-            for p in participates {
-                let participate = p as? Participate
-                if let person = participate?.participate_person {
-                    if let balance = self.getBalance(forTravel: travel, forPerson: person) {
-                        result?[person] = balance
-                    }
+        guard let participates = travel.travel_participate else {
+            return nil
+        }
+        for p in participates {
+            let participate = p as? Participate
+            if let person = participate?.participate_person {
+                if let balance = self.getBalanceSheet(forTravel: travel, forPerson: person) {
+                    result?[person] = balance
                 }
             }
         }

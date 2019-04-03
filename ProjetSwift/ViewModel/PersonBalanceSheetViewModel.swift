@@ -12,7 +12,7 @@ class PersonBalanceSheetViewModel {
     var exchange: [(String, Float)] = []
     
     init(person: Person, travel: Travel) {
-        guard let balances = PersonDAO.getBalances(forTravel: travel) else {
+        guard let balances = PersonDAO.getBalanceSheets(forTravel: travel) else {
             return
         }
         var persons: [String] = []

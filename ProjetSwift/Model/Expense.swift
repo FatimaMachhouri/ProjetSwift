@@ -50,7 +50,6 @@ extension Expense {
                 amountExpense += amount
             }
             return amountExpense
-
         }
     }
     

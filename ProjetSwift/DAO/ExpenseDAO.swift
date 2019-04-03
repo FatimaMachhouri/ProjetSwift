@@ -32,15 +32,15 @@ class ExpenseDAO {
         }
         var result: [Expense]? = []
         for expense in expenses {
-            let expense = (expense as! Expense)
-            result?.append(expense)
+            if let expense = expense as? Expense {
+                result?.append(expense)
+            }
         }
         return result
     }
     
-    
-    
-    static func search(forPerson person: Person) -> [String:Float]? {
+    /// Returns a map with as key, the name of the expense and as value the amount payed by the person for the expense
+    static func search(forPerson person: Person) -> [String: Float]? {
         guard let payments = person.person_pay else {
             return nil
         }
@@ -54,28 +54,36 @@ class ExpenseDAO {
         return result
     }
     
+    /// Returns a map with as key the Person concerned by the expense and as value the amount payed by the person
     static func search(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]
         guard let pay = expense.expense_pay else {
             return nil
         }
         for payAmount in pay {
-            let payAmount = (payAmount as! Pay)
-            //in order to add, we do an assignation
-            result[payAmount.pay_person!] = payAmount.amount
+            guard let payAmount = payAmount as? Pay else {
+                continue
+            }
+            if let person = payAmount.pay_person {
+                result[person] = payAmount.amount
+            }
         }
         return result
     }
     
+    /// Returns a map with as key the Person concerned by the expense and as value the amount of the expense that concerns the person
     static func searchConcern(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]
         guard let pay = expense.expense_pay else {
             return nil
         }
         for payConcern in pay {
-            let payConcern = (payConcern as! Pay)
-            //in order to add, we do an assignation
-            result[payConcern.pay_person!] = payConcern.amountConcerned
+            guard let payConcern = payConcern as? Pay else {
+                continue
+            }
+            if let person = payConcern.pay_person {
+                result[person] = payConcern.amountConcerned
+            }
         }
         return result
     }
