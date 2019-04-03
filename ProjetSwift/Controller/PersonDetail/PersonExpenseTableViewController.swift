@@ -10,8 +10,9 @@ import UIKit
 
 extension PersonExpenseTableViewController: PersonExpenseDelegate {
     func personExpenseAdded(at indexPath: IndexPath) {
-        self.tableView.reloadData()
-        print("haha")
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [indexPath], with: .middle)
+        self.tableView.endUpdates()
     }
 }
 
@@ -42,10 +43,8 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
         guard let personExpense = self.personExpenses.get(expense_at: indexPath.row) else {
             return cell
         }
-        for (name, amount) in personExpense {
-            cell.expenseNameLabel.text = name
-            cell.expenseAmountLabel.text = amount.description
-        }
+        cell.expenseNameLabel.text = personExpense.0
+        cell.expenseAmountLabel.text = personExpense.1.description
         return cell
     }
 
