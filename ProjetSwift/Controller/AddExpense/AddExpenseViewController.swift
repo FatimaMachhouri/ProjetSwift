@@ -78,13 +78,8 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text {
-            if text != "" {
-                textField.resignFirstResponder()
-                return true
-            }
-        }
-        return false
+        textField.resignFirstResponder()
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
