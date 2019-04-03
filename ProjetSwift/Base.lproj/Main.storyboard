@@ -942,7 +942,7 @@
                                                     <rect key="frame" x="926" y="3" width="42.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="yXo-oW-T7h" id="2h4-Mi-Jco"/>
                                                     </connections>
@@ -1085,7 +1085,7 @@
                                                     <rect key="frame" x="924" y="4" width="42.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="yXo-oW-T7h" id="lRw-il-DFo"/>
                                                     </connections>

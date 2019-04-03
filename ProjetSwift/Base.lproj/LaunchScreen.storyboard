@@ -18,22 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="launchPicture" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-MR-xlY">
+                                <rect key="frame" x="48" y="196" width="279" height="275"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IntelliJ'Travel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHQ-wA-ZMi">
-                                <rect key="frame" x="111" y="448.5" width="153" height="32.5"/>
+                                <rect key="frame" x="111" y="483" width="153" height="32.5"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="27"/>
                                 <color key="textColor" red="0.36192081459807601" green="0.6677846342675442" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="launchPicture" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-MR-xlY">
-                                <rect key="frame" x="48" y="143.5" width="279" height="275"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rHQ-wA-ZMi" secondAttribute="bottom" constant="186" id="gTW-H8-YN6"/>
-                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nCe-aY-ls6"/>
-                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="top" secondItem="OjR-MR-xlY" secondAttribute="bottom" constant="30" id="sCU-51-rh5"/>
-                            <constraint firstItem="OjR-MR-xlY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vTH-DM-268"/>
+                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="top" secondItem="OjR-MR-xlY" secondAttribute="bottom" constant="12" id="5Hf-Ww-hqA"/>
+                            <constraint firstItem="rHQ-wA-ZMi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iaz-2y-T1B"/>
+                            <constraint firstItem="OjR-MR-xlY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kom-OZ-Rzl"/>
+                            <constraint firstItem="OjR-MR-xlY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uQf-2O-xnU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
