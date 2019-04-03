@@ -55,15 +55,34 @@ class PersonDAO {
             return nil
         }
     }
-    
-    static func expenses(forPerson person: Person) -> [Expense]? {
-        guard let pay = person.person_pay else {
-            return nil
+
+    static func getBalance(forTravel travel: Travel, forPerson person: Person) -> Float? {
+        var sommeExpense: Float = 0
+        if let allPayments = person.person_pay {
+            for p in allPayments {
+                let pay = p as? Pay
+                if pay?.pay_expense?.expense_travel == travel {
+                    if let amount = pay?.amount {
+                        if let amountConcerned = pay?.amountConcerned {
+                            sommeExpense = sommeExpense + (amount - amountConcerned)
+                        }
+                    }
+                }
+            }
         }
-        var result: [Expense]? = []
-        for p in pay {
-            if let expense = (p as! Pay).pay_expense {
-                result?.append(expense)
+        return sommeExpense
+    }
+    
+    static func getBalances(forTravel travel: Travel) -> [Person: Float]? {
+        var result: [Person: Float]? = [:]
+        if let participates = travel.travel_participate {
+            for p in participates {
+                let participate = p as? Participate
+                if let person = participate?.participate_person {
+                    if let balance = self.getBalance(forTravel: travel, forPerson: person) {
+                        result?[person] = balance
+                    }
+                }
             }
         }
         return result

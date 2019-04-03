@@ -38,6 +38,8 @@ class ExpenseDAO {
         return result
     }
     
+    
+    
     static func search(forPerson person: Person) -> [String:Float]? {
         guard let payments = person.person_pay else {
             return nil
