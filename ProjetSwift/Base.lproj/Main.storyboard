@@ -238,7 +238,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXE-rL-3bU">
-                                                    <rect key="frame" x="453" y="12" width="42" height="21"/>
+                                                    <rect key="frame" x="481" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -251,16 +251,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="QXE-rL-3bU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gNP-2T-eCC" secondAttribute="trailing" constant="10" id="8Wa-QX-qGC"/>
                                                 <constraint firstItem="gNP-2T-eCC" firstAttribute="top" secondItem="yuP-1R-LDg" secondAttribute="topMargin" constant="1" id="FfV-gF-QCN"/>
                                                 <constraint firstItem="gNP-2T-eCC" firstAttribute="bottom" secondItem="yuP-1R-LDg" secondAttribute="bottomMargin" id="Jut-mE-wKP"/>
-                                                <constraint firstItem="QXE-rL-3bU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gNP-2T-eCC" secondAttribute="trailing" constant="10" id="O6L-Tx-v8G"/>
                                                 <constraint firstItem="Xuz-3p-Dvq" firstAttribute="top" secondItem="yuP-1R-LDg" secondAttribute="topMargin" constant="1" id="Ts7-rW-yKH"/>
+                                                <constraint firstItem="QXE-rL-3bU" firstAttribute="centerX" secondItem="yuP-1R-LDg" secondAttribute="centerX" id="U5j-vH-6AF"/>
                                                 <constraint firstItem="Xuz-3p-Dvq" firstAttribute="centerY" secondItem="gNP-2T-eCC" secondAttribute="centerY" id="Wfc-1e-LAW"/>
                                                 <constraint firstItem="QXE-rL-3bU" firstAttribute="centerY" secondItem="gNP-2T-eCC" secondAttribute="centerY" id="YFT-kI-KB0"/>
                                                 <constraint firstItem="Xuz-3p-Dvq" firstAttribute="bottom" secondItem="yuP-1R-LDg" secondAttribute="bottomMargin" id="cC4-qQ-K8x"/>
+                                                <constraint firstItem="Xuz-3p-Dvq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QXE-rL-3bU" secondAttribute="trailing" constant="10" id="d4H-q5-Iza"/>
                                                 <constraint firstItem="gNP-2T-eCC" firstAttribute="leading" secondItem="yuP-1R-LDg" secondAttribute="leadingMargin" constant="29" id="jtB-XT-wq1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Xuz-3p-Dvq" secondAttribute="trailing" constant="18" id="ldh-IZ-mLj"/>
-                                                <constraint firstItem="Xuz-3p-Dvq" firstAttribute="leading" secondItem="QXE-rL-3bU" secondAttribute="trailing" constant="434" id="wo8-XD-aoz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

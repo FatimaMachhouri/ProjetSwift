@@ -36,7 +36,15 @@ class PersonBalanceTableViewController: NSObject, UITableViewDataSource {
         fatalError("unusual error")
         }
         cell.personNameLabel.text = self.personName
-        cell.amountLabel.text = balanceSheet.1.description
+        let amount = balanceSheet.1
+        if amount > 0 {
+            cell.amountLabel.text = "<-- " + amount.description + "€ --"
+            cell.backgroundColor = UIColor(displayP3Red: 0, green: 255, blue: 0, alpha: 0.3)
+        }
+        else {
+            cell.amountLabel.text = "-- " + amount.description + "€ -->"
+            cell.backgroundColor = UIColor(displayP3Red: 255, green: 0, blue: 0, alpha: 0.3)
+        }
         cell.concernedPersonNameLabel.text = balanceSheet.0
         return cell
     }
