@@ -100,12 +100,12 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
         for c in tableView.visibleCells {
             let cell = c as? AddExpenseTableViewCell
             if !self.isCellConcerned(cell: cell) { continue }
-            var person: Person? = nil
-            if let name = cell?.personNameLabel.text {
-                person = PersonDAO.search(forName: name)
-            }
             let amount = cell?.amountTextField.text ?? "0"
-            result[person!] = Float(amount) ?? 0
+            if let name = cell?.personNameLabel.text {
+                if let person = PersonDAO.search(forName: name) {
+                    result[person] = Float(amount) ?? 0
+                }
+            }
         }
         return result
     }
@@ -173,8 +173,12 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
             if let name = self.expenseName.text {
                 let format = DateFormatter()
                 format.dateFormat = "dd/MM/yyyy"
-                let d: Date = format.date(from: self.expenseDate.text!) ?? Date.init()
-                self.newExpense = Expense(name: name, date: d, pic: expensePic?.pngData() ?? Data())
+                var date: Date = Date.init()
+                if let textDate = self.expenseDate.text {
+                    date = format.date(from: textDate) ?? date
+                }
+                self.newExpense = Expense(name: name, date: date, pic: expensePic?.pngData() ?? Data())
+                // force unwrap newExpense just created
                 self.travel?.addToTravel_expenses(self.newExpense!)
                 let amountPaid: [Person: Float?] = self.textFieldContent(tableView: tableView)
                 let amountConcerned: [Person: Float?] = self.textFieldContent(tableView: tableViewConcern)
