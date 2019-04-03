@@ -17,11 +17,15 @@ protocol PersonsExpenseSetViewModelDelegate {
 class PersonsExpenseSetViewModel {
     
     var dataset : [Person: Float] = [:]
+    var datasetConcern : [Person: Float] = [:]
     var delegate : PersonsExpenseSetViewModelDelegate? = nil
     
     init(expense: Expense) {
         if let personsExpense = ExpenseDAO.search(forExpense: expense) {
             self.dataset = personsExpense
+        }
+        if let personsExpenseConcern = ExpenseDAO.searchConcern(forExpense: expense) {
+            self.datasetConcern = personsExpenseConcern
         }
     }
     
@@ -42,4 +46,18 @@ class PersonsExpenseSetViewModel {
         return nil
     }
     
+    public func get(person_amountConcern_at index: Int) -> [Person: Float]? {
+        guard (index >= 0 ) && (index < self.count) else { return nil }
+        
+        var count : Int = 0
+        for (person, amount) in datasetConcern {
+            if index == count {
+                return [person: amount]
+            }
+            count += 1
+        }
+        return nil
+    }
+    
+
 }

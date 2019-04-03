@@ -8,6 +8,19 @@
 
 import UIKit
 
-class DetailExpenseConcernTableViewCell: NSObject {
+class DetailExpenseConcernTableViewCell: UITableViewCell {    
+    @IBOutlet weak var personNameLabel: UILabel!
+    @IBOutlet weak var amountConcernLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
 
 }

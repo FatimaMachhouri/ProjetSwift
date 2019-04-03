@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16189415225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16189414225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift */; };
+		1618941722541244006AE13E /* ExpenseDetailConcernTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618941622541244006AE13E /* ExpenseDetailConcernTableViewController.swift */; };
 		162BD505224E174F00ACE546 /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD504224E174F00ACE546 /* PersonDAO.swift */; };
 		162BD508224E194D00ACE546 /* Participate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD507224E194D00ACE546 /* Participate.swift */; };
 		162BD50A224E198200ACE546 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162BD509224E198200ACE546 /* Person.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16189414225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExpenseConcernTableViewCell.swift; sourceTree = "<group>"; };
+		1618941622541244006AE13E /* ExpenseDetailConcernTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailConcernTableViewController.swift; sourceTree = "<group>"; };
 		162BD504224E174F00ACE546 /* PersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		162BD507224E194D00ACE546 /* Participate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participate.swift; sourceTree = "<group>"; };
 		162BD509224E198200ACE546 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				16F18A9322465C58002714F5 /* TravelTableViewCell.swift */,
 				163328EB224FD567001DF002 /* DetailExpenseTableViewCell.swift */,
 				168E43B3225048FD009D356B /* AddExpenseTableViewCell.swift */,
+				16189414225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				16F1C56F224FDA2C005B8789 /* ExpenseDetailViewController.swift */,
 				1663AB9B22500B5B00446577 /* ExpenseDetailTableViewController.swift */,
+				1618941622541244006AE13E /* ExpenseDetailConcernTableViewController.swift */,
 			);
 			path = ExpenseDetail;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				16C1322B224A2FF1001C8812 /* Travel.swift in Sources */,
 				16C468322244DB4600494E57 /* ProjetSwift.xcdatamodeld in Sources */,
 				3BA123CB224E3D3300D594D9 /* PersonSetViewModel.swift in Sources */,
+				1618941722541244006AE13E /* ExpenseDetailConcernTableViewController.swift in Sources */,
 				16C13226224A2AFD001C8812 /* TravelTableViewController.swift in Sources */,
 				16E5CE4322503EA2002D01DF /* AddExpenseViewController.swift in Sources */,
 				168C2D42224FA39200BA383D /* Expense.swift in Sources */,
@@ -477,6 +484,7 @@
 				16C4685C2244FE8500494E57 /* AddTravelViewController.swift in Sources */,
 				168E43B4225048FD009D356B /* AddExpenseTableViewCell.swift in Sources */,
 				168C2D44224FA99800BA383D /* ExpenseDAO.swift in Sources */,
+				16189415225410CE006AE13E /* DetailExpenseConcernTableViewCell.swift in Sources */,
 				BD8174A2225230240078277F /* Pay.swift in Sources */,
 				16C13222224A2838001C8812 /* CoreDataManager.swift in Sources */,
 				1638953822519181000ECAC6 /* AddExpenseTableViewController.swift in Sources */,

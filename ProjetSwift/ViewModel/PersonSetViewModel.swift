@@ -46,4 +46,23 @@ class PersonSetViewModel {
         return self.dataset[index]
     }
 
+    private func getDeficitPersons() -> [Person]? {
+        var result: [Person]? = []
+        for person in dataset {
+            if person.balancedExpenses < 0 {
+                result?.append(person)
+            }
+        }
+        return result
+    }
+    
+    private func getExcessPersons() -> [Person]? {
+        var result: [Person]? = []
+        for person in dataset {
+            if person.balancedExpenses > 0 {
+                result?.append(person)
+            }
+        }
+        return result
+    }
 }

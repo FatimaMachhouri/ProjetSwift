@@ -10,6 +10,7 @@ import UIKit
 class ExpenseDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewConcern: UITableView!
     @IBOutlet weak var expensePicture: UIImageView!
     @IBOutlet weak var expenseNameLabel: UILabel!
     @IBOutlet weak var expenseAmountLabel: UILabel!
@@ -17,8 +18,8 @@ class ExpenseDetailViewController: UIViewController {
     
     var expense: Expense? = nil
     var tableViewController: ExpenseDetailTableViewController!
+    var tableViewControllerConcern: ExpenseDetailConcernTableViewController!
 
-    
     override func viewDidLoad() {
         if let anExpense = self.expense {
             self.expenseNameLabel.text = anExpense.expenseName
@@ -33,6 +34,7 @@ class ExpenseDetailViewController: UIViewController {
                 fatalError("Unusual error")
             }
             self.tableViewController = ExpenseDetailTableViewController(tableView: tableView, expense: e)
+            self.tableViewControllerConcern = ExpenseDetailConcernTableViewController(tableView: tableViewConcern, expense: e)
         }
         else {
             self.expenseNameLabel.text = ""

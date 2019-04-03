@@ -40,15 +40,26 @@ class ExpenseDAO {
     
     static func search(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]
-        
         guard let pay = expense.expense_pay else {
             return nil
         }
-        
         for payAmount in pay {
             let payAmount = (payAmount as! Pay)
             //in order to add, we do an assignation
             result[payAmount.pay_person!] = payAmount.amount
+        }
+        return result
+    }
+    
+    static func searchConcern(forExpense expense: Expense) -> [Person: Float]? {
+        var result: [Person: Float] = [:]
+        guard let pay = expense.expense_pay else {
+            return nil
+        }
+        for payConcern in pay {
+            let payConcern = (payConcern as! Pay)
+            //in order to add, we do an assignation
+            result[payConcern.pay_person!] = payConcern.amountConcerned
         }
         return result
     }

@@ -34,7 +34,6 @@ class PersonDAO {
         for participate in participates {
             if let person = (participate as! Participate).participate_person {
                 result?.append(person)
-                print(person)
             }
         }
         return result
@@ -55,6 +54,19 @@ class PersonDAO {
         catch {
             return nil
         }
+    }
+    
+    static func expenses(forPerson person: Person) -> [Expense]? {
+        guard let pay = person.person_pay else {
+            return nil
+        }
+        var result: [Expense]? = []
+        for p in pay {
+            if let expense = (p as! Pay).pay_expense {
+                result?.append(expense)
+            }
+        }
+        return result
     }
     
 }
