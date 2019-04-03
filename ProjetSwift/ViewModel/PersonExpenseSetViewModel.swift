@@ -9,8 +9,7 @@
 import Foundation
 
 class PersonExpenseSetViewModel {
-    
-    var dataset : [String:Float] = [:]
+    var dataset : [String: Float] = [:]
     
     init(person: Person) {
         if let personExpense = ExpenseDAO.search(forPerson: person) {
@@ -22,7 +21,7 @@ class PersonExpenseSetViewModel {
         return self.dataset.count
     }
     
-    public func get(expense_at index: Int) -> [String:Float]? {
+    public func get(expense_at index: Int) -> [String: Float]? {
         guard (index >= 0 ) && (index < self.count) else { return nil }
         var count : Int = 0
         for (name, amount) in dataset {
@@ -33,6 +32,5 @@ class PersonExpenseSetViewModel {
         }
         return nil
     }
-
     
 }

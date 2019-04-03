@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import UIKit
-import CoreData
-
 
 protocol PersonSetViewModelDelegate {
     func dataSetChanged()
@@ -37,7 +34,7 @@ class PersonSetViewModel {
         self.delegate?.personAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
     }
     
-    public var count : Int{
+    public var count: Int{
         return self.dataset.count
     }
 

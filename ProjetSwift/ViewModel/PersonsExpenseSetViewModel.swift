@@ -7,37 +7,29 @@
 //
 
 import Foundation
-import UIKit
-import CoreData
-
-protocol PersonsExpenseSetViewModelDelegate {
-    func dataSetChanged()
-}
 
 class PersonsExpenseSetViewModel {
-    
-    var dataset : [Person: Float] = [:]
+    var datasetPay : [Person: Float] = [:]
     var datasetConcern : [Person: Float] = [:]
-    var delegate : PersonsExpenseSetViewModelDelegate? = nil
     
     init(expense: Expense) {
         if let personsExpense = ExpenseDAO.search(forExpense: expense) {
-            self.dataset = personsExpense
+            self.datasetPay = personsExpense
         }
         if let personsExpenseConcern = ExpenseDAO.searchConcern(forExpense: expense) {
             self.datasetConcern = personsExpenseConcern
         }
     }
     
-    public var count : Int{
-        return self.dataset.count
+    public var count: Int{
+        return self.datasetPay.count
     }
     
     public func get(person_amount_at index: Int) -> [Person: Float]? {
         guard (index >= 0 ) && (index < self.count) else { return nil }
         
         var count : Int = 0
-        for (person, amount) in dataset {
+        for (person, amount) in datasetPay {
             if index == count {
                 return [person: amount]
             }

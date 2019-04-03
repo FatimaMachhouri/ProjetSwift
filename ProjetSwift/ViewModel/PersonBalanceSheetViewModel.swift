@@ -15,6 +15,17 @@ class PersonBalanceSheetViewModel {
         guard let balances = PersonDAO.getBalanceSheets(forTravel: travel) else {
             return
         }
+        makeBalanceSheet(balances, person)
+    }
+    
+    
+    /// Algorithm that generates the minimum necessary exchanges to balance out the solds and returns the
+    /// balance sheet (exchanges between the a person and the other persons) of the person in parameters.
+    ///
+    /// - Parameters:
+    ///   - balances: The balance of the persons
+    ///   - person: the person we want the balance sheet of
+    fileprivate func makeBalanceSheet(_ balances: [Person: Float], _ person: Person) {
         var persons: [String] = []
         var amounts: [Float] = []
         for (person, amount) in balances {
@@ -27,8 +38,7 @@ class PersonBalanceSheetViewModel {
             exchanges[personName] = []
         }
         while !isBalanced(amounts: amounts) {
-            print("haha")
-            guard balances.values.count > 0 else {
+            guard amounts.count > 0 else {
                 return
             }
             // force unwrap because count is tested in guard
@@ -53,7 +63,7 @@ class PersonBalanceSheetViewModel {
         self.exchange = exchanges[person.name] ?? []
     }
     
-    func isBalanced(amounts: [Float]) -> Bool {
+    fileprivate func isBalanced(amounts: [Float]) -> Bool {
         for amount in amounts {
             guard amount == 0 else {
                 return false

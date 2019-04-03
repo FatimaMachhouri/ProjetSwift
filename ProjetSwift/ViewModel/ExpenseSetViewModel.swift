@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import UIKit
-import CoreData
 
 protocol ExpenseSetViewModelDelegate {
     func dataSetChanged()
@@ -32,12 +30,12 @@ class ExpenseSetViewModel {
         }
     }
     
-    public func add(expense: Expense){
+    public func add(expense: Expense) {
         self.dataset.append(expense)
         self.delegate?.expenseAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
     }
     
-    public var count : Int{
+    public var count: Int {
         return self.dataset.count
     }
     

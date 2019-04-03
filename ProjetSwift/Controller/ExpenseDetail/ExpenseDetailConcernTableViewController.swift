@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenseDetailConcernTableViewController: NSObject, UITableViewDataSource, PersonsExpenseSetViewModelDelegate {
+class ExpenseDetailConcernTableViewController: NSObject, UITableViewDataSource {
     var personsExpense: PersonsExpenseSetViewModel
     var tableView: UITableView
     
@@ -17,13 +17,8 @@ class ExpenseDetailConcernTableViewController: NSObject, UITableViewDataSource, 
         self.tableView = tableView
         super.init()
         self.tableView.dataSource = self
-        self.personsExpense.delegate = self
     }
-    
-    func dataSetChanged() {
-        self.tableView.reloadData()
-    }
-    
+
     // Mark: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
