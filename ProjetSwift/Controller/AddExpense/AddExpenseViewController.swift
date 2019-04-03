@@ -153,12 +153,20 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let alertName = UIAlertController(title: "Erreur", message:"Impossible d'ajouter. Renseignez le nom de la dépense.", preferredStyle: .alert)
+        alertName.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+        
         let alertAmounts = UIAlertController(title: "Erreur", message:"Impossible d'ajouter. Les montants payés et concernés ne sont pas égaux.", preferredStyle: .alert)
         alertAmounts.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
-        
+       
         if (identifier == "okNewExpenseSegue") {
+            guard self.expenseName.hasText else {
+                self.present(alertName, animated: true) {}
+                return false
+            }
+            
             guard self.totalTableView(tableView: tableView) == self.totalTableView(tableView: tableViewConcern) else {
-                self.present(alertAmounts, animated: true){}
+                self.present(alertAmounts, animated: true) {}
                 return false
             }
         }

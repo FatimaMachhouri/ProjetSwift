@@ -88,7 +88,19 @@ class AddTravelViewController: UIViewController, UITextFieldDelegate, UIImagePic
         return true
     }
     
-
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let alertName = UIAlertController(title: "Erreur", message:"Impossible d'ajouter. Renseignez le nom du voyage.", preferredStyle: .alert)
+        alertName.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+        
+        if (identifier == "okNewTravelSegue") {
+            guard self.travelNameLabel.hasText else {
+                self.present(alertName, animated: true) {}
+                return false
+            }
+        }
+        return true
+    }
+    
     // MARK: segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okNewTravelSegue" {

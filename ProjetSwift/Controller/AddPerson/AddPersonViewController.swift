@@ -25,8 +25,20 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let alertName = UIAlertController(title: "Erreur", message:"Impossible d'ajouter. Renseignez le nom de la personne à ajouter.", preferredStyle: .alert)
+        alertName.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+        
+        if (identifier == "okNewPersonSegue") {
+            guard self.nameTextField.hasText else {
+                self.present(alertName, animated: true) {}
+                return false
+            }
+        }
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "okNewPersonSegue" {
             guard let personName = self.nameTextField.text else {
                 return
