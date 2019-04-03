@@ -28,7 +28,7 @@ class PersonDetailViewController: UIViewController {
             fatalError("Unusual error")
         }
         self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p)
-        self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t)
+        self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t, personExpenseTableViewController: self.personExpenseTableViewController)
     }
     
 }

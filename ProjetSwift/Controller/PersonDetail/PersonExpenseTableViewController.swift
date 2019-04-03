@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension PersonExpenseTableViewController: PersonExpenseDelegate {
+    func personExpenseAdded(at indexPath: IndexPath) {
+        self.tableView.reloadData()
+        print("haha")
+    }
+}
+
+
 class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
     var tableView: UITableView
     var personExpenses: PersonExpenseSetViewModel
@@ -17,6 +25,7 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
         self.personExpenses = PersonExpenseSetViewModel(person: person)
         super.init()
         self.tableView.dataSource = self
+        self.personExpenses.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -8,14 +8,21 @@
 
 import Foundation
 
+protocol PersonBalanceSheetDelegate {
+    func lineDeleted(at indexPath: IndexPath)
+}
+
 class PersonBalanceSheetViewModel {
     var exchange: [(String, Float)] = []
     var person: Person
     var travel: Travel
+    var delegate: PersonBalanceSheetDelegate? = nil
+    var personExpenseSet: PersonExpenseSetViewModel
     
-    init(person: Person, travel: Travel) {
+    init(person: Person, travel: Travel, personExpenseTableViewController: PersonExpenseTableViewController) {
         self.person = person
         self.travel = travel
+        self.personExpenseSet = personExpenseTableViewController.personExpenses
         guard let balances = PersonDAO.getBalanceSheets(forTravel: travel) else {
             return
         }
@@ -96,6 +103,8 @@ class PersonBalanceSheetViewModel {
         else if amount < 0 {
             self.reimburse(person_paying: self.person, person_receiving: otherPerson, amount: -amount)
         }
+        self.exchange.remove(at: index)
+        self.delegate?.lineDeleted(at: IndexPath(row: index, section: 0))
     }
     
     fileprivate func reimburse(person_paying: Person, person_receiving: Person, amount: Float) {
@@ -107,5 +116,6 @@ class PersonBalanceSheetViewModel {
         expense.addToExpense_pay(payment)
         expense.addToExpense_pay(receive)
         self.travel.addToTravel_expenses(expense)
+        self.personExpenseSet.add(expense: expense)
     }
 }

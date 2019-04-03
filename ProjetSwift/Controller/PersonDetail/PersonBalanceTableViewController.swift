@@ -8,18 +8,27 @@
 
 import UIKit
 
+extension PersonBalanceTableViewController: PersonBalanceSheetDelegate {
+    func lineDeleted(at indexPath: IndexPath) {
+        self.tableView.beginUpdates()
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        self.tableView.endUpdates()
+    }
+}
+
 class PersonBalanceTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView
     var personBalanceSheet: PersonBalanceSheetViewModel
     var personName: String
     
-    init(tableView: UITableView, person: Person, travel: Travel) {
+    init(tableView: UITableView, person: Person, travel: Travel, personExpenseTableViewController: PersonExpenseTableViewController) {
         self.tableView = tableView
-        self.personBalanceSheet = PersonBalanceSheetViewModel(person: person, travel: travel)
+        self.personBalanceSheet = PersonBalanceSheetViewModel(person: person, travel: travel, personExpenseTableViewController: personExpenseTableViewController)
         self.personName = person.name
         super.init()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.personBalanceSheet.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

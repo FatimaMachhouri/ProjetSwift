@@ -8,8 +8,13 @@
 
 import Foundation
 
+protocol PersonExpenseDelegate {
+    func personExpenseAdded(at indexPath: IndexPath)
+}
+
 class PersonExpenseSetViewModel {
     var dataset : [String: Float] = [:]
+    var delegate: PersonExpenseDelegate? = nil
     
     init(person: Person) {
         if let personExpense = ExpenseDAO.search(forPerson: person) {
@@ -19,6 +24,11 @@ class PersonExpenseSetViewModel {
     
     public var count : Int{
         return self.dataset.count
+    }
+    
+    public func add(expense: Expense) {
+        dataset[expense.name] = expense.amount
+        self.delegate?.personExpenseAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
     }
     
     public func get(expense_at index: Int) -> [String: Float]? {
