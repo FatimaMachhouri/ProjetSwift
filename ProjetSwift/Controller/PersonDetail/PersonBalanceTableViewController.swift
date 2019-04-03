@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonBalanceTableViewController: NSObject, UITableViewDataSource {
+class PersonBalanceTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView
     var personBalanceSheet: PersonBalanceSheetViewModel
     var personName: String
@@ -19,6 +19,7 @@ class PersonBalanceTableViewController: NSObject, UITableViewDataSource {
         self.personName = person.name
         super.init()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,5 +50,12 @@ class PersonBalanceTableViewController: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let reimburseButton = UITableViewRowAction(style: .normal, title: "Reimburse", handler: ({ (rowAction, indexPath) in
+            print("reiburse")
+        }))
+        reimburseButton.backgroundColor = UIColor.green
+        return [reimburseButton]
+    }
     
 }
