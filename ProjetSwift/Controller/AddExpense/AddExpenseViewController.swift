@@ -117,9 +117,19 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     func merge(map1: [Person: Float?], map2: [Person: Float?]) -> [Person: [Float?]] {
         var result: [Person: [Float?]] = [:]
-        for person in map1 {
+        var map: [Person: Float?] = [:]
+        
+        //on récupère la map la plus longue pour itérer dessus ensuite
+        if map1.count > map2.count {
+            map = map1
+        }
+        else {
+            map = map2
+        }
+        
+        for person in map {
             var amounts: [Float?] = [0,0]
-            amounts[0] = person.value
+            amounts[0] = map1[person.key] ?? 0
             amounts[1] = map2[person.key] ?? 0
             result[person.key] = amounts
         }
@@ -147,35 +157,5 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate, UIImagePi
             }
         }
     }
- 
-    // Mark: segue
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "okNewExpenseSegue" {
-            if let name = self.expenseName.text {
-                let format = DateFormatter()
-                format.dateFormat = "dd/MM/yyyy"
-                let d: Date = format.date(from: self.expenseDate.text!) ?? Date.init()
-                self.newExpense = Expense(name: name, date: d, pic: expensePic?.pngData() ?? Data())
-                self.travel?.addToTravel_expenses(self.newExpense!)
-     
-                for c in self.tableView.visibleCells {
-                    let cell = c as? AddExpenseTableViewCell
-                    if !self.isCellConcerned(cell: cell) { continue }
-                    var person: Person? = nil
-                    if let name = cell?.personNameLabel.text {
-                        person = PersonDAO.search(forName: name)
-                    }
-                    let amount = cell?.amountTextField.text ?? "0"
-                    let pay = Pay(pAmount: Float(amount) ?? 0)
-                    person?.addToPerson_pay(pay)
-                    pay.pay_expense = newExpense
-                }
-            }
-        }
-    }
- */
- 
      
 }
