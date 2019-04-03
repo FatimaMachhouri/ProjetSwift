@@ -162,7 +162,7 @@
                                             <outlet property="balanceLabel" destination="HoY-Af-ZhY" id="bij-lq-XZ3"/>
                                             <outlet property="nameLabel" destination="F74-IV-5tW" id="Dlg-OH-lwN"/>
                                             <outlet property="totalLabel" destination="Jol-1m-Wwh" id="ahR-MU-w6e"/>
-                                            <segue destination="BCZ-Fk-cNq" kind="show" id="zdY-Lg-gIM"/>
+                                            <segue destination="BCZ-Fk-cNq" kind="presentation" id="zdY-Lg-gIM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -218,11 +218,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mU5-dV-2ww">
-                                <rect key="frame" x="10" y="125" width="1004" height="240"/>
+                                <rect key="frame" x="10" y="115" width="1004" height="592.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="Suk-2q-G8S"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyBalanceCell" id="FIg-78-vbX" customClass="PersonBalanceTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1004" height="44"/>
@@ -273,7 +270,7 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-Y8-AIY">
-                                <rect key="frame" x="10" y="411" width="1004" height="240"/>
+                                <rect key="frame" x="10" y="753.5" width="1004" height="592.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyPaymentCell" id="smq-J8-Ezu" customClass="PersonExpenseTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
@@ -320,7 +317,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes dépenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhn-ux-Mt7">
-                                <rect key="frame" x="10" y="380" width="761" height="21"/>
+                                <rect key="frame" x="10" y="722.5" width="761" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="pPA-jc-3zn"/>
                                 </constraints>
@@ -329,7 +326,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon partage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-b7-DEM">
-                                <rect key="frame" x="10" y="94" width="747" height="21"/>
+                                <rect key="frame" x="10" y="84" width="747" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ljZ-aB-26X"/>
                                 </constraints>
@@ -337,31 +334,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfc-t5-fpC">
+                                <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                                <items>
+                                    <navigationItem title="Title" id="n7S-Jd-xJy">
+                                        <barButtonItem key="leftBarButtonItem" title="Back to Balance" id="PPn-mm-4K2">
+                                            <connections>
+                                                <segue destination="8LP-uX-kbq" kind="unwind" unwindAction="unwindAfterSeeingPersonDetail:" id="2xf-9f-tTC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zrU-Y8-AIY" firstAttribute="top" secondItem="Rhn-ux-Mt7" secondAttribute="bottom" constant="10" id="6zV-Pi-Pea"/>
                             <constraint firstItem="hCj-14-bWi" firstAttribute="trailing" secondItem="Rhn-ux-Mt7" secondAttribute="trailing" constant="253" id="9K1-gr-DWm"/>
+                            <constraint firstItem="Jfc-t5-fpC" firstAttribute="top" secondItem="hCj-14-bWi" secondAttribute="top" id="9to-FI-tKK"/>
                             <constraint firstItem="Rhn-ux-Mt7" firstAttribute="top" secondItem="mU5-dV-2ww" secondAttribute="bottom" constant="15" id="Bbv-oM-afQ"/>
                             <constraint firstItem="mU5-dV-2ww" firstAttribute="top" secondItem="GyA-b7-DEM" secondAttribute="bottom" constant="10" id="CqW-je-m1K"/>
                             <constraint firstItem="hCj-14-bWi" firstAttribute="trailing" secondItem="zrU-Y8-AIY" secondAttribute="trailing" constant="10" id="DKQ-Wh-6RV"/>
+                            <constraint firstItem="Jfc-t5-fpC" firstAttribute="trailing" secondItem="hCj-14-bWi" secondAttribute="trailing" id="KeD-lz-5bE"/>
                             <constraint firstItem="hCj-14-bWi" firstAttribute="trailing" secondItem="GyA-b7-DEM" secondAttribute="trailing" constant="267" id="PwW-4H-jU5"/>
                             <constraint firstItem="hCj-14-bWi" firstAttribute="trailing" secondItem="mU5-dV-2ww" secondAttribute="trailing" constant="10" id="R8d-1q-SDW"/>
                             <constraint firstItem="GyA-b7-DEM" firstAttribute="leading" secondItem="hCj-14-bWi" secondAttribute="leading" constant="10" id="W4l-za-4IG"/>
                             <constraint firstItem="zrU-Y8-AIY" firstAttribute="height" secondItem="mU5-dV-2ww" secondAttribute="height" id="gIK-IV-Xmi"/>
                             <constraint firstItem="mU5-dV-2ww" firstAttribute="leading" secondItem="hCj-14-bWi" secondAttribute="leading" constant="10" id="gZV-xs-B4D"/>
                             <constraint firstItem="zrU-Y8-AIY" firstAttribute="leading" secondItem="hCj-14-bWi" secondAttribute="leading" constant="10" id="iex-wm-D7A"/>
-                            <constraint firstItem="GyA-b7-DEM" firstAttribute="top" secondItem="hCj-14-bWi" secondAttribute="top" constant="20" id="nIt-vM-zX0"/>
                             <constraint firstItem="Rhn-ux-Mt7" firstAttribute="leading" secondItem="hCj-14-bWi" secondAttribute="leading" constant="10" id="nvP-rJ-ToV"/>
+                            <constraint firstItem="Jfc-t5-fpC" firstAttribute="leading" secondItem="hCj-14-bWi" secondAttribute="leading" id="qeA-pI-ZVs"/>
+                            <constraint firstItem="GyA-b7-DEM" firstAttribute="top" secondItem="Jfc-t5-fpC" secondAttribute="bottom" constant="10" id="rqc-ge-j6N"/>
+                            <constraint firstItem="hCj-14-bWi" firstAttribute="bottom" secondItem="zrU-Y8-AIY" secondAttribute="bottom" id="yMC-fL-es2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hCj-14-bWi"/>
                     </view>
                     <connections>
                         <outlet property="balanceSheetTableView" destination="mU5-dV-2ww" id="zDV-Iy-1fh"/>
+                        <outlet property="navBar" destination="n7S-Jd-xJy" id="rFc-gU-pMF"/>
                         <outlet property="paymentTableView" destination="zrU-Y8-AIY" id="x3h-HK-rFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tf3-Vt-ZXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8LP-uX-kbq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3277.5999999999999" y="118.29085457271366"/>
         </scene>

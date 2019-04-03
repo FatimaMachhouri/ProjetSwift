@@ -11,6 +11,7 @@ import UIKit
 class PersonDetailViewController: UIViewController {
     @IBOutlet weak var paymentTableView: UITableView!
     @IBOutlet weak var balanceSheetTableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationItem!
     
     var personExpenseTableViewController: PersonExpenseTableViewController!
     var personBalanceSheetTableViewController: PersonBalanceTableViewController!
@@ -27,6 +28,7 @@ class PersonDetailViewController: UIViewController {
         guard let t = travel else {
             fatalError("Unusual error")
         }
+        self.navBar.title = "\(p.name)'s detail"
         self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p)
         self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t, personExpenseTableViewController: self.personExpenseTableViewController)
     }

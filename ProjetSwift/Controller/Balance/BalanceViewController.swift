@@ -34,6 +34,10 @@ class BalanceViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindAfterSeeingPersonDetail(_ unwindSegue: UIStoryboardSegue) {
+        self.tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destController = segue.destination as? AddPersonViewController {
             destController.travel = self.travel
