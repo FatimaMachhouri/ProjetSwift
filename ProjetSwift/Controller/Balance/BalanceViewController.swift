@@ -56,6 +56,7 @@ class BalanceViewController: UIViewController {
                 if let name = cell.nameLabel.text {
                     destController.person = PersonDAO.search(forName: name)
                 }
+                destController.travel = self.travel
             }
         }
     }

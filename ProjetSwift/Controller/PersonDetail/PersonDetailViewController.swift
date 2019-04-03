@@ -10,9 +10,12 @@ import UIKit
 
 class PersonDetailViewController: UIViewController {
     @IBOutlet weak var paymentTableView: UITableView!
-    var  personExpenseTableViewController: PersonExpenseTableViewController!
-    var person: Person? = nil
+    @IBOutlet weak var balanceSheetTableView: UITableView!
     
+    var personExpenseTableViewController: PersonExpenseTableViewController!
+    var personBalanceSheetTableViewController: PersonBalanceTableViewController!
+    var person: Person? = nil
+    var travel: Travel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,11 @@ class PersonDetailViewController: UIViewController {
         guard let p = person else {
             fatalError("Unusual error")
         }
+        guard let t = travel else {
+            fatalError("Unusual error")
+        }
         self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p)
+        self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t)
     }
     
 

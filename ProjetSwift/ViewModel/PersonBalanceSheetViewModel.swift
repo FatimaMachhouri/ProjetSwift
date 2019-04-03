@@ -8,8 +8,8 @@
 
 import Foundation
 
-class PersonBalanceSheetVueModel {
-    var balance: [(String, Float)] = []
+class PersonBalanceSheetViewModel {
+    var exchange: [(String, Float)] = []
     
     init(person: Person, travel: Travel) {
         guard let balances = PersonDAO.getBalances(forTravel: travel) else {
@@ -27,6 +27,7 @@ class PersonBalanceSheetVueModel {
             exchanges[personName] = []
         }
         while !isBalanced(amounts: amounts) {
+            print("haha")
             guard balances.values.count > 0 else {
                 return
             }
@@ -49,7 +50,7 @@ class PersonBalanceSheetVueModel {
                 exchanges[persons[indexMin]]?.append((persons[indexMax], -max))
             }
         }
-        self.balance = exchanges[person.name] ?? []
+        self.exchange = exchanges[person.name] ?? []
     }
     
     func isBalanced(amounts: [Float]) -> Bool {
@@ -61,4 +62,12 @@ class PersonBalanceSheetVueModel {
         return true
     }
     
+    public var count : Int{
+        return self.exchange.count
+    }
+    
+    public func get(exchange_at index: Int) -> (String, Float)? {
+        guard (index >= 0 ) && (index < self.count) else { return nil }
+        return self.exchange[index]
+    }
 }

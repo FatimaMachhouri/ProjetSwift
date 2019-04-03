@@ -224,7 +224,7 @@
                                     <constraint firstAttribute="height" constant="240" id="Suk-2q-G8S"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyBalanceCell" id="FIg-78-vbX" customClass="PersonBalanceTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idMyBalanceCell" id="FIg-78-vbX" customClass="PersonBalanceTableViewCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1004" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FIg-78-vbX" id="yuP-1R-LDg">
@@ -237,14 +237,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuz-3p-Dvq">
-                                                    <rect key="frame" x="929" y="12" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXE-rL-3bU">
+                                                    <rect key="frame" x="453" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXE-rL-3bU">
-                                                    <rect key="frame" x="453" y="12" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuz-3p-Dvq">
+                                                    <rect key="frame" x="929" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -264,9 +264,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountLabel" destination="QXE-rL-3bU" id="0Cf-X0-HZy"/>
-                                            <outlet property="concernedPersonNameLabel" destination="Xuz-3p-Dvq" id="QsX-Cl-ZxF"/>
-                                            <outlet property="personNameLabel" destination="gNP-2T-eCC" id="5US-2R-dUB"/>
+                                            <outlet property="amountLabel" destination="QXE-rL-3bU" id="Ogh-cF-CYU"/>
+                                            <outlet property="concernedPersonNameLabel" destination="Xuz-3p-Dvq" id="UDw-qV-41L"/>
+                                            <outlet property="personNameLabel" destination="gNP-2T-eCC" id="H03-OJ-jwy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -356,6 +356,7 @@
                         <viewLayoutGuide key="safeArea" id="hCj-14-bWi"/>
                     </view>
                     <connections>
+                        <outlet property="balanceSheetTableView" destination="mU5-dV-2ww" id="zDV-Iy-1fh"/>
                         <outlet property="paymentTableView" destination="zrU-Y8-AIY" id="x3h-HK-rFU"/>
                     </connections>
                 </viewController>

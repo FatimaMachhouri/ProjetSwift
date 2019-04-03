@@ -1,5 +1,5 @@
 //
-//  Balance1TableViewCell.swift
+//  PersonBalanceTableViewCell.swift
 //  ProjetSwift
 //
 //  Created by Fatima Machhouri on 03/04/2019.
@@ -18,10 +18,10 @@ class PersonBalanceTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
 
