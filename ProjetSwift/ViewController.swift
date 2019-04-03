@@ -20,11 +20,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindAfterNewTravelCreated(segue: UIStoryboardSegue) {
-        if let addTravelController = segue.source as? AddTravelViewController {
-            if let travel = addTravelController.newTravel {
-                self.tableViewController.travels.add(travel: travel)
-            }
-        }
+
     }
     
     @IBAction func unwindAfterTravelUpdate(_ unwindSegue: UIStoryboardSegue) {

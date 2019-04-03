@@ -29,7 +29,6 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
         super.init()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.travels.delegate = self
     }
     
     // MARK: UITableViewDataSource
@@ -71,23 +70,6 @@ class TravelTableViewController: NSObject, UITableViewDataSource, UITableViewDel
         (cell as! TravelTableViewCell).imageViewer.image = UIImage(data: travel.pic)
         (cell as! TravelTableViewCell).imageViewer.setRounded()
         return cell
-    }
-    
-}
-
-extension TravelTableViewController: TravelSetViewModelDelegate {
-    // MARK: TravelSetViewModelDelegate
-    func dataSetChanged() {
-        self.tableView.reloadData()
-    }
-    
-    func travelAdded(at indexPath: IndexPath) {
-        /*
-         self.tableView.beginUpdates()
-         self.tableView.insertRows(at: [indexPath], with: UITableView.RowAnimation.middle)
-         self.tableView.endUpdates()
-         */
-        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
 }

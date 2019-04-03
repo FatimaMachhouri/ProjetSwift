@@ -10,23 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol TravelSetViewModelDelegate {
-    func dataSetChanged()
-    func travelAdded(at indexPath: IndexPath)
-}
-
 class TravelSetViewModel {
-    var delegate: TravelSetViewModelDelegate? = nil
     var travelFetched: NSFetchedResultsController<Travel>
     
     init(data: NSFetchedResultsController<Travel>) {
         self.travelFetched = data
-    }
-    
-    public func add(travel: Travel) {
-        if let indexPath = self.travelFetched.indexPath(forObject: travel) {
-            self.delegate?.travelAdded(at: indexPath)
-        }
     }
     
     public var count : Int {
