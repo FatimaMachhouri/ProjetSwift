@@ -28,7 +28,7 @@ class PersonDetailViewController: UIViewController {
         guard let t = travel else {
             fatalError("Unusual error")
         }
-        self.navBar.title = "\(p.name)'s detail"
+        self.navBar.title = "Détail de \(p.name)"
         self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p, travel: t)
         self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t, personExpenseTableViewController: self.personExpenseTableViewController)
     }

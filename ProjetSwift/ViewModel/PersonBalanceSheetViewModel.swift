@@ -108,7 +108,7 @@ class PersonBalanceSheetViewModel {
     }
     
     fileprivate func reimburse(person_paying: Person, person_receiving: Person, amount: Float) {
-        let expense = Expense(name: "reimbursement of \(person_paying.name) to \(person_receiving.name)")
+        let expense = Expense(name: "Remboursement de \(person_paying.name) à \(person_receiving.name)")
         let payment = Pay(pAmount: amount, cAmount: 0)
         let receive = Pay(pAmount: 0, cAmount: amount)
         person_receiving.addToPerson_pay(receive)

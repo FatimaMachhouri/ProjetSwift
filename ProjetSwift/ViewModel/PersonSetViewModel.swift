@@ -45,7 +45,6 @@ class PersonSetViewModel {
         }
         var somme: Float = 0
         for expense in expenses {
-            print("boucle")
             somme = somme + expense.0
         }
         return somme
