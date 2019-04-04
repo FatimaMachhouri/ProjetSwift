@@ -33,6 +33,16 @@ class PersonExpenseSetViewModel {
         self.delegate?.personExpenseAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
     }
     
+    public func add(expense: Expense, with_amount: Bool) {
+        if with_amount {
+            dataset.append((expense.name, expense.amount))
+        }
+        else {
+            dataset.append((expense.name, 0))
+        }
+        self.delegate?.personExpenseAdded(at: IndexPath(row: self.dataset.count-1, section: 0))
+    }
+    
     public func get(expense_at index: Int) -> (String, Float)? {
         guard (index >= 0 ) && (index < self.count) else { return nil }
         return self.dataset[index]

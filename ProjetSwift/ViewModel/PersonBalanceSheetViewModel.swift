@@ -116,6 +116,6 @@ class PersonBalanceSheetViewModel {
         expense.addToExpense_pay(payment)
         expense.addToExpense_pay(receive)
         self.travel.addToTravel_expenses(expense)
-        self.personExpenseSet.add(expense: expense)
+        self.personExpenseSet.add(expense: expense, with_amount: person_paying == self.person)
     }
 }
