@@ -42,10 +42,24 @@ class PersonTableViewController: NSObject, UITableViewDataSource, PersonSetViewM
     }
     
     private func configure(cell: BalanceTableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
-        let person = self.persons.get(personAt: indexPath.row)
-        cell.nameLabel.text = person?.name
-        cell.totalLabel.text = person?.totalExpenses.description
-        cell.balanceLabel.text = person?.balancedExpenses.description
+        guard let person = self.persons.get(personAt: indexPath.row) else {
+            return cell
+        }
+        cell.nameLabel.text = person.name
+        cell.totalLabel.text = persons.totalExpenses(forPerson: person)?.description
+        if let balance = persons.balancedExpenses(forPerson: person) {
+            cell.balanceLabel.text = balance.description
+            if balance <= 0 {
+                cell.nameLabel.textColor = UIColor.red
+                cell.totalLabel.textColor = UIColor.red
+                cell.balanceLabel.textColor = UIColor.red
+            }
+            else {
+                cell.nameLabel.textColor = UIColor.green
+                cell.totalLabel.textColor = UIColor.green
+                cell.balanceLabel.textColor = UIColor.green
+            }
+        }
         return cell
     }
     

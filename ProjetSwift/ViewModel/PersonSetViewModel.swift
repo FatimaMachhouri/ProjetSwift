@@ -16,17 +16,13 @@ protocol PersonSetViewModelDelegate {
 class PersonSetViewModel {
     var dataset : [Person] = []
     var delegate : PersonSetViewModelDelegate? = nil
-    
-    init() {
-        if let persons = PersonDAO.fetchAll() {
-            self.dataset = persons
-        }
-    }
+    var travel: Travel
     
     init(travel: Travel) {
         if let persons = PersonDAO.search(forTravel: travel) {
             self.dataset = persons
         }
+        self.travel = travel
     }
     
     public func add(person: Person){
@@ -41,6 +37,32 @@ class PersonSetViewModel {
     public func get(personAt index: Int) -> Person?{
         guard (index >= 0 ) && (index < self.count) else { return nil }
         return self.dataset[index]
+    }
+    
+    public func totalExpenses(forPerson person: Person) -> Float? {
+        guard let expenses = ExpenseDAO.search(forTravel: self.travel, forPerson: person) else {
+            return nil
+        }
+        var somme: Float = 0
+        for expense in expenses {
+            print("boucle")
+            somme = somme + expense.0
+        }
+        return somme
+    }
+    
+    public func balancedExpenses(forPerson person: Person) -> Float? {
+        guard let expenses = ExpenseDAO.search(forTravel: self.travel, forPerson: person) else {
+            return nil
+        }
+        var somme: Float = 0
+        for expense in expenses {
+            somme = somme + expense.1
+        }
+        guard let totalExpenses = self.totalExpenses(forPerson: person) else {
+            return nil
+        }
+        return totalExpenses - somme
     }
     
 }

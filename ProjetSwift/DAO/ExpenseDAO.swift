@@ -87,6 +87,24 @@ class ExpenseDAO {
         return result
     }
     
+    static func search(forTravel travel: Travel, forPerson person: Person) -> [(Float, Float)]? {
+        guard let personPay = person.person_pay else {
+            return nil
+        }
+        var result: [(Float, Float)]? = []
+        for p in personPay {
+            guard let pay = p as? Pay else {
+                continue
+            }
+            if let expense = pay.pay_expense {
+                if expense.expense_travel == travel {
+                    result?.append((pay.amount, pay.amountConcerned))
+                }
+            }
+        }
+        return result
+    }
+    
     /// Returns a map with as key the Person concerned by the expense and as value the amount of the expense that concerns the person
     static func searchConcern(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]
