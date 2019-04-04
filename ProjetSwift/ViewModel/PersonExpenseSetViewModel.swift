@@ -16,8 +16,8 @@ class PersonExpenseSetViewModel {
     var dataset : [(String, Float)] = []
     var delegate: PersonExpenseDelegate? = nil
     
-    init(person: Person) {
-        if let personExpense = ExpenseDAO.search(forPerson: person) {
+    init(person: Person, travel: Travel) {
+        if let personExpense = ExpenseDAO.search(forPerson: person, forTravel: travel) {
             for (name, amount) in personExpense {
                 dataset.append((name, amount))
             }

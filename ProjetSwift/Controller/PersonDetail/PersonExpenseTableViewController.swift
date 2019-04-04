@@ -21,9 +21,9 @@ class PersonExpenseTableViewController: NSObject, UITableViewDataSource {
     var tableView: UITableView
     var personExpenses: PersonExpenseSetViewModel
     
-    init(tableView: UITableView, person: Person) {
+    init(tableView: UITableView, person: Person, travel: Travel) {
         self.tableView = tableView
-        self.personExpenses = PersonExpenseSetViewModel(person: person)
+        self.personExpenses = PersonExpenseSetViewModel(person: person, travel: travel)
         super.init()
         self.tableView.dataSource = self
         self.personExpenses.delegate = self

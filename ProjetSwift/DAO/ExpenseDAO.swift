@@ -54,6 +54,22 @@ class ExpenseDAO {
         return result
     }
     
+    static func search(forPerson person: Person, forTravel travel: Travel) -> [String: Float]? {
+        guard let payments = person.person_pay else {
+            return nil
+        }
+        var result: [String:Float]? = [:]
+        for p in payments {
+            let payement = p as? Pay
+            if let expense = payement?.pay_expense {
+                if expense.expense_travel == travel {
+                    result?[expense.name] = payement?.amount
+                }
+            }
+        }
+        return result
+    }
+    
     /// Returns a map with as key the Person concerned by the expense and as value the amount payed by the person
     static func search(forExpense expense: Expense) -> [Person: Float]? {
         var result: [Person: Float] = [:]

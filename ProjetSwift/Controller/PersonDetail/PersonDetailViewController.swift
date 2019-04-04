@@ -29,7 +29,7 @@ class PersonDetailViewController: UIViewController {
             fatalError("Unusual error")
         }
         self.navBar.title = "\(p.name)'s detail"
-        self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p)
+        self.personExpenseTableViewController = PersonExpenseTableViewController(tableView: paymentTableView, person: p, travel: t)
         self.personBalanceSheetTableViewController = PersonBalanceTableViewController(tableView: balanceSheetTableView, person: p, travel: t, personExpenseTableViewController: self.personExpenseTableViewController)
     }
     
